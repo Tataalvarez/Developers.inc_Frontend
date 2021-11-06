@@ -6,7 +6,7 @@ Proyecto desarrollado por el grupo de trabajo Developers .inc
 
 - ✅ **Integrantes del equipo y roles:**
     1.   Jose David Fontalvo - 
-    2.  
+    2.  Jorge Augusto Jaramillo -  
     3. 
     4.  
     5.  
@@ -56,6 +56,11 @@ Usamos [Git y Github](http://github.com/) para el versionado.
 -**José David Fontalvo Mejia** - [FontalvoJ](https://github.com/FontalvoJ)
 
 Soy estudiante de Ingeniería de Sistemas de 6to semestre, en la Universidad Católica Luis Amigó sede Apartadó, vivo en el municipio de Carepa ubicado en la región de Uraba,  estoy en el programa de Mintic, la idea es aprender, culminar el programa y ampliar conocimientos.
+
+-**Jorge Augusto Jaramillo Jaramillo** - [JorgeAJaramillo](https://github.com/JorgeAJaramillo)
+
+Soy Medico Veterinario Zootecnista, egresado de la Universidad de Caldas, vivo en Manizales - Caldas. Ingrese al programa MisionTic para
+poder ampliar mis conocimientos en el area de Programación, ya que siempre me ha interesado y nunca tuve la oportunidad hasta este momento.
 
 -**** - []()
 
