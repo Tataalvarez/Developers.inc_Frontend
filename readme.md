@@ -7,7 +7,7 @@ Proyecto desarrollado por el grupo de trabajo Developers .inc
 - ✅ **Integrantes del equipo y roles:**
     1.   Jose David Fontalvo - 
     2.  Jorge Augusto Jaramillo -  
-    3. 
+    3.  Paulo Richar Mora Noguera -
     4.  
     5.  
 
@@ -33,7 +33,7 @@ Se utilizaran diferentes tecnologias para el desarrollo tanto de Frontend como B
 *El proyecto estara construido con:*
 
 - [React](https://es.reactjs.org/) - Una biblioteca de JavaScript para construir interfaces de usuario
-- [Nodejs + Express](https://expressjs.com/es/) - Infraestructura web rapida, minimalista y flexible para Node.js
+- [Apollo-Client](https://www.apollographql.com/docs/react/) - 
 - [GraphQL](https://graphql.org/) - Es un query language, es decir, un lenguaje de consultas.
 - [Trello (Administrador de proyectos)](https://trello.com/) - Es un software de administración de proyectos que permite llevar el registro de todas las metas determinadas para cada uno de los sprints, así como su responsable. 
 - [Azure Devops (Suite)](https://azure.microsoft.com/en-us/services/devops/) - Es una nube mundial para hospedar máquinas virtuales Windows o Linux, independientemente de que use ASP.NET, Java, Node.js o PHP para desarrollar aplicaciones.
@@ -62,9 +62,9 @@ Soy estudiante de Ingeniería de Sistemas de 6to semestre, en la Universidad Cat
 Soy Medico Veterinario Zootecnista, egresado de la Universidad de Caldas, vivo en Manizales - Caldas. Ingrese al programa MisionTic para
 poder ampliar mis conocimientos en el area de Programación, ya que siempre me ha interesado y nunca tuve la oportunidad hasta este momento.
 
--**** - []()
+-**Paulo Richar Mora Noguera** - [Richmon43](https://github.com/richmon43)
 
--**** - []()
+El aprendizaje autonomo es mi fuerte y en esta serie de cursos he explorado y alcanzado competencias que no habia podido desempeñar por multiples ocupaciones. Mintic me dio la posibilidad de meterme de lleno en este tema tan apasionante del desarrollo web y en lo que he recorrido, he descubierto que este mundo me apasiona, por ello, me he dedicado con la convicción de ser en un futuro cercano un desarrollador capaz de diseñar y sacar adelante cualquier proyecto en el que pueda colaborar. 
 
 -**** - []()
 
@@ -74,4 +74,4 @@ poder ampliar mis conocimientos en el area de Programación, ya que siempre me h
 
 ## **Licencia 📄**
 
-Este proyecto estara bajo licencia y derechos de autor propiedad de Developers .inc
+Este proyecto estara bajo licencia y derechos de autor propiedad de Developers.inc
