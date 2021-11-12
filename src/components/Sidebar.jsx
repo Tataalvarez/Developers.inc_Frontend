@@ -5,7 +5,7 @@ const SidebarLinks = () => {
   return (
     <ul className='mt-12'>
       <SidebarRoute to='' title='Inicio' icon='fas fa-home' />
-      <SidebarRoute to='/perfil' title='Perfil' icon='fas fa-smile-wink' />
+      <SidebarRoute to='/inscripcion' title='Inscripción Proyectos' icon='fas fa-pen' />
       <SidebarRoute to='/usuarios' title='Gestión Usuarios' icon='fas fa-user' />
       <SidebarRoute to='/proyectos' title='Gestión Proyectos' icon='fas fa-folder' />
     </ul>

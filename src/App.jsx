@@ -5,7 +5,7 @@ import { Auth0Provider } from '@auth0/auth0-react';
 import Navbar from "./components/Navbar.jsx";
 import { UserContext } from 'context/userContext';
 import Index from 'pages/Index';
-import Perfil from 'pages/Perfil';
+import Inscripcion from 'pages/Inscripcion';
 import Usuarios from 'pages/Usuarios';
 import Proyectos from 'pages/Proyectos';
 import Login from 'pages/Login';
@@ -50,7 +50,7 @@ function App() {
           <Routes>
             <Route path='/' element={<PrivateLayout />}>
               <Route path='' element={<Index />} />
-              <Route path='perfil' element={<Perfil />} />
+              <Route path='inscripcion' element={<Inscripcion />} />
               <Route path='usuarios' element={<Usuarios />} />
               <Route path='proyectos' element={<Proyectos/>} />
               <Route path='login' element={<Login />} />

@@ -1,12 +1,13 @@
 import React from 'react';
+import "../styles/Index.css";
 
 const Index = () => {
   return (
-    <div>
-      <div className='bg-green-300 h-96'>Index page</div>
-      <div className='bg-green-300 h-96'>Index page</div>
-      <div className='bg-green-300 h-96'>Index page</div>
-      <div className='bg-green-300 h-96'>Index page</div>
+    <div className="Index">
+    
+        <div class="container">
+        </div>
+        <img src={"Gespro720.jpg"} class= "center" alt="GesPro" />
     </div>
   );
 };
