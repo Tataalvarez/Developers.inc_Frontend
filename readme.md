@@ -8,7 +8,7 @@ Proyecto desarrollado por el grupo de trabajo Developers .inc
     1.   Jose David Fontalvo - 
     2.  Jorge Augusto Jaramillo -  
     3. 
-    4.  
+    4.  Jully Tatiana Alvarez - 
     5.  
 
 ---
@@ -66,8 +66,8 @@ poder ampliar mis conocimientos en el area de Programación, ya que siempre me h
 
 -**** - []()
 
--**** - []()
-
+-**Jully Tatiana Alvarez** - [Tataalvarez](https://github.com/Tataalvarez)
+Soy estudiante de ultimo semestre de Ingeniería Ambiental de la Universidad Distrital, vivo en Bogotá y estoy en el programa Mintic ya que me interesa mucho el area de la programación y quiero aprender para aplicarlo a mi carrera.
 -**** - []()
 
 
