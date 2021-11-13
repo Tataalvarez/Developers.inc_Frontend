@@ -9,7 +9,7 @@ Proyecto desarrollado por el grupo de trabajo Developers .inc
     2.  Jorge Augusto Jaramillo -  
     3. 
     4.  Jully Tatiana Alvarez - 
-    5.  
+    5.  Marco Fabian Piñeros Hernández - Developer
 
 ---
 
@@ -68,8 +68,9 @@ poder ampliar mis conocimientos en el area de Programación, ya que siempre me h
 
 -**Jully Tatiana Alvarez** - [Tataalvarez](https://github.com/Tataalvarez)
 Soy estudiante de ultimo semestre de Ingeniería Ambiental de la Universidad Distrital, vivo en Bogotá y estoy en el programa Mintic ya que me interesa mucho el area de la programación y quiero aprender para aplicarlo a mi carrera.
--**** - []()
 
+-**Marco Fabian Piñeros Hernández** - [MFabian2](https://github.com/MFabian2)
+Soy investigador y estudiante de último semestre de Ingeniería industrial, resido en Bogotá y siempre he estado muy relacionado con el rubro de programación durante mi desarrollo académico por lo que vi en este programa un alto potencial de reforzar y adquirir conocimientos para enriquecer mis habilidades afines y desarrollar buenas prácticas en cuanto al desarrollo.
 
 
 ## **Licencia 📄**
