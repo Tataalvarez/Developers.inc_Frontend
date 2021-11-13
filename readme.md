@@ -5,11 +5,11 @@ Proyecto desarrollado por el grupo de trabajo Developers .inc
 ---
 
 - ✅ **Integrantes del equipo y roles:**
-    1.  Jose David Fontalvo - 
-    2.  Jorge Augusto Jaramillo -  
-    3.  Paulo Richar Mora Noguera -
-    4.  Jully Tatiana Alvarez - 
-    5.  Marco Fabian Piñeros Hernández - Developer
+    1.  Jose David Fontalvo - Desarrollador
+    2.  Jorge Augusto Jaramillo - Product Owner
+    3.  Paulo Richar Mora Noguera - Administrador de BD
+    4.  Jully Tatiana Alvarez - Scrum master
+    5.  Marco Fabian Piñeros Hernández - Analista
 
 ---
 
