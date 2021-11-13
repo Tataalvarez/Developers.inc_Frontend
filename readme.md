@@ -5,9 +5,9 @@ Proyecto desarrollado por el grupo de trabajo Developers .inc
 ---
 
 - ✅ **Integrantes del equipo y roles:**
-    1.   Jose David Fontalvo - 
+    1.  Jose David Fontalvo - 
     2.  Jorge Augusto Jaramillo -  
-    3. 
+    3.  Paulo Richar Mora Noguera -
     4.  Jully Tatiana Alvarez - 
     5.  Marco Fabian Piñeros Hernández - Developer
 
@@ -62,9 +62,9 @@ Soy estudiante de Ingeniería de Sistemas de 6to semestre, en la Universidad Cat
 Soy Medico Veterinario Zootecnista, egresado de la Universidad de Caldas, vivo en Manizales - Caldas. Ingrese al programa MisionTic para
 poder ampliar mis conocimientos en el area de Programación, ya que siempre me ha interesado y nunca tuve la oportunidad hasta este momento.
 
--**** - []()
+-**Paulo Richar Mora Noguera** - [Richmon43](https://github.com/richmon43)
 
--**** - []()
+El aprendizaje autonomo es mi fuerte y en esta serie de cursos he explorado y alcanzado competencias que no habia podido desempeñar por multiples ocupaciones. Mintic me dio la posibilidad de meterme de lleno en este tema tan apasionante del desarrollo web y en lo que he recorrido, he descubierto que este mundo me apasiona, por ello, me he dedicado con la convicción de ser en un futuro cercano un desarrollador capaz de diseñar y sacar adelante cualquier proyecto en el que pueda colaborar. 
 
 -**Jully Tatiana Alvarez** - [Tataalvarez](https://github.com/Tataalvarez)
 Soy estudiante de ultimo semestre de Ingeniería Ambiental de la Universidad Distrital, vivo en Bogotá y estoy en el programa Mintic ya que me interesa mucho el area de la programación y quiero aprender para aplicarlo a mi carrera.
