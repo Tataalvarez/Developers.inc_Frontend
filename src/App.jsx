@@ -8,8 +8,9 @@ import Index from 'pages/Index';
 import Perfil from 'pages/Perfil';
 import Usuarios from 'pages/Usuarios';
 import Proyectos from 'pages/Proyectos';
-import Login from 'pages/Login';
-import Registro from 'pages/Registro';
+// import Login from 'pages/Login';
+// import Registro from 'pages/Registro';
+import Auth from 'pages/auth/Auth.jsx';
 import 'styles/globals.css';
 
 // import PrivateRoute from 'components/PrivateRoute';
@@ -53,8 +54,8 @@ function App() {
               <Route path='perfil' element={<Perfil />} />
               <Route path='usuarios' element={<Usuarios />} />
               <Route path='proyectos' element={<Proyectos/>} />
-              <Route path='login' element={<Login />} />
-              <Route path='registro' element={<Registro />} />
+              <Route path='login' element={<Auth />} />
+              {/* <Route path='registro' element={<Registro />} /> */}
             </Route>
           </Routes>
         </BrowserRouter>

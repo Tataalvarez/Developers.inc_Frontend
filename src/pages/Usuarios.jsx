@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import React, { Fragment } from "react";
-import { GET_USERS } from "../graphql/login";
+import { GET_USERS } from "../graphql/user";
 import Usuario from "./Usuario";
 
 const Usuarios = () => {
