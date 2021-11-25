@@ -2,11 +2,12 @@
 import React, { useState } from "react";
 
 // Componentes
-import LoginForm from "./LoginForm.jsx";
-import RegisterForm from "./RegisterForm.jsx";
+import LoginForm from "./LoginForm";
+import RegisterForm from "./RegisterForm";
 
 export default function Auth() {
   const [showLogin, setShowLogin] = useState(true);
+  
   return (
     <div>
       <div className="flex justify-center mt-5">

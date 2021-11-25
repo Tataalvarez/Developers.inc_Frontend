@@ -3,11 +3,12 @@ import React, { Fragment } from "react";
 import { GET_USERS } from "../graphql/user";
 import Usuario from "./Usuario";
 
-const Usuarios = () => {
+export default function Usuarios(){
   const { loading, data } = useQuery(GET_USERS);
+
   function renderUsers() {
     return data.getUsers.map((user) => {
-      return <Usuario key={user.id} name={user.nombre}></Usuario>;
+      return <Usuario key={user.id} username={user.username} nombre={user.nombre}></Usuario>;
     });
   }
 
@@ -17,5 +18,3 @@ const Usuarios = () => {
     </Fragment>
   );
 };
-
-export default Usuarios;

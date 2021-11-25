@@ -4,11 +4,12 @@ import * as Yup from "yup";
 import { useMutation } from "@apollo/client";
 import { NEW_USER } from "../../graphql/user";
 
-export default function RegisterForm(props) {
+export default function Registro(props) {
   const { setShowLogin } = props;
   // estado para generar un mensaje de advertencia
   const [message, setMessage] = useState(null);
   const [newUser] = useMutation(NEW_USER);
+  
   const formik = useFormik({
     initialValues: initialValues(),
     validationSchema: Yup.object({

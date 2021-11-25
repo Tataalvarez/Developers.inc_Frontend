@@ -3,10 +3,10 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useMutation } from "@apollo/client";
 import { LOGIN } from "../../graphql/user";
-import { setToken } from "../../utils/token";
+import { setToken, decodeToken } from "../../utils/token";
 import useAuth from "../../hooks/useAuth";
 
-export default function LoginForm() {
+export default function Login() {
   const [message, setMessage] = useState(null);
   const [authUser] = useMutation(LOGIN);
 
@@ -35,7 +35,7 @@ export default function LoginForm() {
         });
         const { token } = data.authUser;
         setToken(token);
-        setUser(token);
+        setUser(decodeToken(token));
       } catch (error) {
         setMessage(error.message);
         setTimeout(() => {
