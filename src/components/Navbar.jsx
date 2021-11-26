@@ -70,12 +70,12 @@ const Navbar = ({ showNav }) => {
 
           {button && (
             <Button linkTo="Login" buttonStyle="btn--outline">
-              INICIAR SESIÓN
+              Iniciar Sesión
             </Button>
           )}
           {button && (
             <Button linkTo="Registro" buttonStyle="btn--outline">
-              REGISTRARSE
+              Registrarse
             </Button>
           )}
         </div>

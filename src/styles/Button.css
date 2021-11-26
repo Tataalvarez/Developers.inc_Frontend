@@ -45,7 +45,7 @@
   
     font-weight: bold;
     color: blanchedalmond;
-    font-size: 17px;
+    font-size: 14px;
   }
   
   .btnToHome {
@@ -54,7 +54,7 @@
   
     font-weight: lighter;
     color: var(--bk);
-    font-size: 17px;
+    font-size: 14px;
     border: 1px solid black;
   }
   

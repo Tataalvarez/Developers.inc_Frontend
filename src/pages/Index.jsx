@@ -5,9 +5,9 @@ const Index = () => {
   return (
     <div className="Index">
     
-        <div class="container">
+        <div className="container">
         </div>
-        <img src={"Gespro720.jpg"} class= "center" alt="GesPro" />
+        <img src={"Gespro720.jpg"} className="center" alt="GesPro" />
     </div>
   );
 };
