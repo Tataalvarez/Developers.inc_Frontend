@@ -8,7 +8,6 @@ export const GET_USERS = gql`
       apellido
       identificacion
       email
-      rol
       estado
       createdAt
       updatedAt
