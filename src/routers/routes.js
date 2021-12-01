@@ -5,11 +5,16 @@
 import Home from "../pages/Home";
 import User from "../pages/auth/User";
 import Error404 from "../pages/Error404";
-
+import Projects from "../pages/Projects";
 const routes = [
   {
     path: "/",
     element: <Home/>,
+    exact: true
+  },
+  {
+    path: "/projects",
+    element: <Projects/>,
     exact: true
   },
   {

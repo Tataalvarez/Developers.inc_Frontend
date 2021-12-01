@@ -19,8 +19,8 @@ export default function Sidebar() {
             Perfil
           </NavLink>
         </li>
-        <li className={location.pathname === "/proyectos" ? "bg-blue-800 p-2 rounded" : "p-2"}>
-          <NavLink to="/proyectos" className="text-white">
+        <li className={location.pathname === "/projects" ? "bg-blue-800 p-2 rounded" : "p-2"}>
+          <NavLink to="/projects" className="text-white">
             Proyectos
           </NavLink>
         </li>
