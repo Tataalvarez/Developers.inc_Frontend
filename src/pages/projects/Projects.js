@@ -6,7 +6,7 @@ function DataProyectos() {
 
   const dataProyectos = [{ 
     titulo: "Persistencia Toxocara", objEspecifico:"Objetivo Especifico" , 
-    presupuesto: "500000" , nombreLider: "Pepe Ramirez", estado: "ACTIVO", fase: "ENDESARROLLO", 
+    presupuesto: "500000", nombreLider: "Pepe Ramirez", estado: "ACTIVO", fase: "ENDESARROLLO", 
     fechaInicial: "02/15/2021",
     }, 
   ];
@@ -19,7 +19,7 @@ function DataProyectos() {
     titulo: '',
     objEspecifico: '',
     presupuesto: '',
-    lider: '',
+    nombreLider: '',
     estado: '',
     fase: '',
     fechaInicial: ''
@@ -92,7 +92,7 @@ setProyectoSeleccionado(elemento);
               <td>{elemento.titulo}</td>
               <td>{elemento.objEspecifico}</td>
               <td>{elemento.presupuesto}</td>
-              <td>{elemento.lider}</td>
+              <td>{elemento.nombreLider}</td>
               <td>{elemento.estado}</td>
               <td>{elemento.fase}</td>
               <td>{elemento.fechaInicial}</td>
@@ -148,8 +148,8 @@ setProyectoSeleccionado(elemento);
               className="form-control"
               readOnly
               type="text"
-              name="lider"
-              value={proyectoSeleccionado && proyectoSeleccionado.lider}
+              name="nombrelider"
+              value={proyectoSeleccionado && proyectoSeleccionado.nombreLider}
               onChange={handleChange}
             />
             <br />
@@ -261,8 +261,8 @@ setProyectoSeleccionado(elemento);
             <input
               className="form-control"
               type="text"
-              name="lider"
-              value={proyectoSeleccionado && proyectoSeleccionado.lider}
+              name="nombreLider"
+              value={proyectoSeleccionado && proyectoSeleccionado.nombrelider}
               onChange={handleChange}
             />
             <br />
