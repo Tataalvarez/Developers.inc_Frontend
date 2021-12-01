@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
 export const GET_PROJECTS = gql`
-  query GetProjects {
+  query getProjects {
     getProjects {
       id
       titulo
@@ -19,7 +19,7 @@ export const GET_PROJECTS = gql`
 `;
 
 export const GET_PROJECT = gql`
-  query GetProject($getProjectId: ID!) {
+  query getProject($getProjectId: ID!) {
     getProject(id: $getProjectId) {
       id
       titulo
@@ -37,7 +37,7 @@ export const GET_PROJECT = gql`
 `;
 
 export const NEW_PROJECT = gql`
-  mutation NewProject($input: ProjectInput) {
+  mutation newProject($input: ProjectInput) {
     newProject(input: $input) {
       id
       titulo
@@ -55,7 +55,7 @@ export const NEW_PROJECT = gql`
 `;
 
 export const UPDATE_PROJECT = gql`
-  mutation UpdateProject($updateProjectId: ID!, $input: ProjectInput) {
+  mutation updateProject($updateProjectId: ID!, $input: ProjectInput) {
     updateProject(id: $updateProjectId, input: $input) {
       id
       titulo
@@ -73,7 +73,7 @@ export const UPDATE_PROJECT = gql`
 `;
 
 export const DELETE_PROJECT = gql`
-  mutation DeleteProject($deleteProjectId: ID!) {
+  mutation deleteProject($deleteProjectId: ID!) {
     deleteProject(id: $deleteProjectId)
   }
 `;
