@@ -10,6 +10,7 @@ Proyecto desarrollado por el grupo de trabajo Developers .inc
     3.  Paulo Richar Mora Noguera - Administrador de BD
     4.  Jully Tatiana Alvarez - Scrum master
     5.  Marco Fabian Piñeros Hernández - Analista
+    6.  Alberto Matute Makacio - Desarrollador
 
 ---
 
