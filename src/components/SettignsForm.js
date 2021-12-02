@@ -20,7 +20,7 @@ export default function SettignsForm(props) {
       {/* <button>Cambiar contraseña</button> */}
       {/* <button>Cambiar email</button> */}
       {/* <button>Descripcion</button> */}
-      <button onClick={onLogout}>Cerrar Sesion</button>
+      <button onClick={onLogout}>Salir</button>
       {/* <button onClick={() => setShowModal(false)}>Cancelar</button> */}
     </div>
   )
