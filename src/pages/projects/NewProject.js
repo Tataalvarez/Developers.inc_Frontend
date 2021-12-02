@@ -1,18 +1,31 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
+import * as Yup from "yup";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useMutation } from "@apollo/client";
 import { NEW_PROJECT } from "../../graphql/project";
+import ModalPerfilUser from "../../components/ModalPerfilUser";
 
 export default function NewProject() {
+  const [showModal, setShowModal] = useState(false)
   // estado para generar un mensaje de advertencia
   const [message, setMessage] = useState(null);
-  const [ newProject ] = useMutation(NEW_PROJECT);
+  const [newProject] = useMutation(NEW_PROJECT);
 
   const formik = useFormik({
     initialValues: initialValues(),
+    validationSchema: Yup.object({
+      titulo: Yup.string().required("Error, el titulo es obligatorio"),
+      nombreLider: Yup.string().required("Error, el nombre del lider es obligatorio"),
+      identificacionLider: Yup.string().required(
+        "Error, la identificación del lider es obligatoria"
+      ),
+      presupuesto: Yup.number()
+        .required("Error, el presupuesto es requerido"),
+    }),
     onSubmit: async (values) => {
-      const { titulo, nombreLider, identificacionLider, presupuesto } = values;
+      const { titulo, nombreLider, identificacionLider, presupuesto, estado } =
+        values;
       try {
         const { data } = await newProject({
           variables: {
@@ -21,12 +34,15 @@ export default function NewProject() {
               nombreLider,
               identificacionLider,
               presupuesto,
+              estado,
             },
           },
         });
         console.log(data);
         // Usuario creado correctamente
-        setMessage(`El proyecto: ${data.getProjects.titulo} se creó correctamente`);
+        setMessage(
+          `El proyecto: ${data.newProject.titulo} se creó correctamente`
+        );
         setTimeout(() => {
           setMessage(null);
         }, 3000);
@@ -117,9 +133,12 @@ export default function NewProject() {
           />
         </div>
 
-        {formik.touched.identificacionLider && formik.errors.identificacionLider ? (
+        {formik.touched.identificacionLider &&
+        formik.errors.identificacionLider ? (
           <div className="mt-1 mb-2 bg-red-100 border-l-4 border-red-500 text-red-700 p-4">
-            <p className="text-bold text-xs">{formik.errors.identificacionLider}</p>
+            <p className="text-bold text-xs">
+              {formik.errors.identificacionLider}
+            </p>
           </div>
         ) : null}
 
@@ -147,7 +166,29 @@ export default function NewProject() {
           </div>
         ) : null}
 
-        
+        <div className="pb-3">
+          <label
+            className="block text-gray-700 text-sm font-bold mb-1"
+            htmlFor="estado"
+          >
+            Estado
+          </label>
+          <input
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            type="text"
+            id="estado"
+            placeholder="Estado"
+            value={formik.values.estado}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+          />
+        </div>
+
+        {formik.touched.estado && formik.errors.estado ? (
+          <div className="mt-1 mb-2 bg-red-100 border-l-4 border-red-500 text-red-700 p-4">
+            <p className="text-bold text-xs">{formik.errors.estado}</p>
+          </div>
+        ) : null}
 
         <div className="pb-0">
           <input
@@ -155,9 +196,14 @@ export default function NewProject() {
             className="bg-gray-800 w-full mt-4 p-2 text-white hover:bg-gray-900 cursor-pointer"
             value="Crear Proyecto"
             onChange={formik.handleChange}
+            onClick={() => setShowModal(true)}
           />
         </div>
       </form>
+
+      <ModalPerfilUser show={true} setShow={null} title="perfil">
+        <p>Opciones</p>
+      </ModalPerfilUser>
     </>
   );
 }
@@ -168,5 +214,6 @@ function initialValues() {
     nombreLider: "",
     identificacionLider: "",
     presupuesto: "",
+    estado: "",
   };
 }
