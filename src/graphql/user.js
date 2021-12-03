@@ -6,6 +6,10 @@ export const GET_USERS = gql`
       id
       nombre
       apellido
+      identificacion
+      email
+      rol
+      createdAt
     }
   }
 `;
@@ -18,6 +22,7 @@ export const NEW_USER = gql`
       apellido
       identificacion
       email
+      rol
       createdAt
     }
   }

@@ -9,9 +9,10 @@ export default function Registro(props) {
   // estado para generar un mensaje de advertencia
   const [message, setMessage] = useState(null);
   const [newUser] = useMutation(NEW_USER);
-  
+
   const formik = useFormik({
     initialValues: initialValues(),
+    mapPropsToValues: () => ({ rol: '' }),
     validationSchema: Yup.object({
       nombre: Yup.string().required("Error, el nombre es obligatorio"),
       apellido: Yup.string().required("Error, el apellido es obligatorio"),
@@ -24,9 +25,11 @@ export default function Registro(props) {
       password: Yup.string()
         .required("Error, la contraseña es obligatoria")
         .min(6, "La contraseña debe tener mas de 6 caracteres"),
+      rol: Yup.string()
+        .required('El rol es obligatorio'),
     }),
-    onSubmit: async (values) => {
-      const { nombre, apellido, identificacion, email, password } = values;
+    onSubmit: async (values, { setSubmitting }) => {
+      const { nombre, apellido, identificacion, email, password, rol } = values;
       try {
         const { data } = await newUser({
           variables: {
@@ -35,18 +38,18 @@ export default function Registro(props) {
               apellido,
               identificacion,
               email,
-              password
-            }
-          }
+              password,
+              rol,
+            },
+          },
         });
         console.log(data);
         // Usuario creado correctamente
-        setMessage(
-          `El usuario: ${data.newUser.nombre} se creó correctamente`
-        );
+        setMessage(`El usuario: ${data.newUser.nombre} se creó correctamente`);
         setTimeout(() => {
           setMessage(null);
           setShowLogin(true);
+          setSubmitting(false);
         }, 3000);
       } catch (error) {
         setMessage(error.message);
@@ -197,13 +200,16 @@ export default function Registro(props) {
             Tipo de Usuario
           </label>
           <select
-            id="rol"
+            name="rol"
             className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            value={formik.values.rol}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
           >
-            <option value="" label="Selecciona tu tipo de usuario">Administrador</option>
-            <option value="1">Administrador</option>
-            <option value="2">Lider</option>
-            <option value="3">Estudiante</option>
+            <option value="" label="Selecciona tu rol" />
+            <option value="ESTUDIANTE" label="Estudiante" />
+            <option value="LIDER" label="Lider" />
+            <option value="ADMINISTRADOR" label="Administrador" />
           </select>
         </div>
 
@@ -226,6 +232,7 @@ function initialValues() {
     apellido: "",
     email: "",
     identificacion: "",
-    password: ""
+    password: "",
+    rol: "",
   };
 }
