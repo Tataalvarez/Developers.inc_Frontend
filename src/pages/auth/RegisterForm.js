@@ -213,6 +213,12 @@ export default function Registro(props) {
           </select>
         </div>
 
+        {formik.touched.rol && formik.errors.rol ? (
+          <div className="mt-1 mb-2 bg-red-100 border-l-4 border-red-500 text-red-700 p-4">
+            <p className="text-bold text-xs">{formik.errors.rol}</p>
+          </div>
+        ) : null}
+
         <div className="pb-0">
           <input
             type="submit"
