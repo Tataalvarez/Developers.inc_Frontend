@@ -18,6 +18,7 @@ export const NEW_USER = gql`
       apellido
       identificacion
       email
+      rol
       createdAt
     }
   }
