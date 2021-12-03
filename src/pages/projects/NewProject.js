@@ -4,10 +4,9 @@ import * as Yup from "yup";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useMutation } from "@apollo/client";
 import { NEW_PROJECT } from "../../graphql/project";
-import ModalPerfilUser from "../../components/ModalPerfilUser";
+
 
 export default function NewProject() {
-  const [showModal, setShowModal] = useState(false)
   // estado para generar un mensaje de advertencia
   const [message, setMessage] = useState(null);
   const [newProject] = useMutation(NEW_PROJECT);
@@ -196,14 +195,10 @@ export default function NewProject() {
             className="bg-gray-800 w-full mt-4 p-2 text-white hover:bg-gray-900 cursor-pointer"
             value="Crear Proyecto"
             onChange={formik.handleChange}
-            onClick={() => setShowModal(true)}
           />
         </div>
       </form>
 
-      <ModalPerfilUser show={true} setShow={null} title="perfil">
-        <p>Opciones</p>
-      </ModalPerfilUser>
     </>
   );
 }

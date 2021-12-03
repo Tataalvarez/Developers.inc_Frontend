@@ -8,6 +8,7 @@ import NewProject from "../pages/projects/NewProject";
 import Error404 from "../pages/Error404";
 import Layout from "../components/Layout";
 import DataProyectos from "../pages/projects/DataProyectos";
+import ListProject from "../pages/projects/ListProject";
 
 export default function Navigation() {
   return (
@@ -18,6 +19,7 @@ export default function Navigation() {
           <Route path="/user" element={<User />} />
           <Route path="/projects" element={<DataProyectos />} />
           <Route path="/newproject" element={<NewProject />} />
+          <Route path="/listarproyectos" element={<ListProject />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </Layout>

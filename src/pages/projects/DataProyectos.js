@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
+import { Modal, ModalBody, ModalHeader,  } from "reactstrap";
 import { useFormik } from "formik";
-import * as Yup from "yup";
 import { useMutation } from "@apollo/client";
 import { NEW_PROJECT } from "../../graphql/project";
 
@@ -82,7 +81,8 @@ function DataProyectos() {
 
   const formik = useFormik({
     initialValues: initialValues(),
-    onSubmit: async (values) => {
+    onSubmit: async (values, {resetForm}) => {
+      resetForm();
       const {
         titulo,
         objEspecifico,

@@ -6,6 +6,7 @@ import Home from "../pages/Home";
 import User from "../pages/auth/User";
 import Error404 from "../pages/Error404";
 import Projects from "../pages/Projects";
+import ListProjects from "../pages/Projects";
 const routes = [
   {
     path: "/",
@@ -15,6 +16,11 @@ const routes = [
   {
     path: "/projects",
     element: <Projects/>,
+    exact: true
+  },
+  {
+    path: "/listarproyectos",
+    element: <ListProjects/>,
     exact: true
   },
   {
