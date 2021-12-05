@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Modal, ModalBody, ModalHeader, ModalFooter,  } from "reactstrap";
+import { Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
 import { useQuery } from "@apollo/client";
@@ -8,36 +8,25 @@ import { useMutation } from "@apollo/client";
 import { NEW_PROJECT } from "../../graphql/project";
 import { GET_PROJECTS } from "../../graphql/project";
 
-const DataProyectos= () => { 
-    const {data,error} = useQuery(GET_PROJECTS);
+const DataProyectos = () => {
+  const { data, error } = useQuery(GET_PROJECTS);
 
-    useEffect(() => {
-        console.log("data servidor", data);
-        }, [data]);
-
+  useEffect(() => {
+    console.log("data servidor", data);
+  }, [data]);
 
   useEffect(() => {
     if (error) {
       toast.error("Error consultando los proyectos");
     }
   }, [error]);
- 
-const [newProject] = useMutation(NEW_PROJECT);
-const dataProyectos = [
-  {
-        titulo: "Persistencia Toxocara",
-       objEspecifico: "Objetivo Especifico",
-      presupuesto: "500000",
-       nombreLider: "Pepe Ramirez",
-      estado: "ACTIVO",
-      fase: "ENDESARROLLO",
-       fechaInicial: "02/15/2021",
-     },
-   ];
 
-   const [proyecto, setProyecto] = useState(dataProyectos);
-   const [modalEditar, setModalEditar] = useState(false);
-   const [modalEliminar, setModalEliminar] = useState(false);
+  const [newProject] = useMutation(NEW_PROJECT);
+  const dataProyectos = useState ([])
+
+  const [proyecto, setProyecto] = useState(dataProyectos);
+  const [modalEditar, setModalEditar] = useState(false);
+  const [modalEliminar, setModalEliminar] = useState(false);
   const [modalInsertar, setModalInsertar] = useState(false);
   const [proyectoSeleccionado, setProyectoSeleccionado] = useState({
     titulo: "",
@@ -50,43 +39,42 @@ const dataProyectos = [
     fechaInicial: "",
   });
 
-   const seleccionarProyecto = (elemento, caso) => {
+  const seleccionarProyecto = (elemento, caso) => {
     setProyectoSeleccionado(elemento);
-     caso === "Editar" ? setModalEditar(true) : setModalEliminar(true);
-   };
+    caso === "Editar" ? setModalEditar(true) : setModalEliminar(true);
+  };
 
-   const handleChange = (e) => {
+  const handleChange = (e) => {
     const { _id, value } = e.target;
-     setProyectoSeleccionado((prevState) => ({
+    setProyectoSeleccionado((prevState) => ({
       ...prevState,
       [_id]: value,
-     }));
-   };
+    }));
+  };
 
-   const editar = () => {
-     var proyectoNuevo = proyecto;
-     proyectoNuevo.map((proyecto) => {
-      if (proyecto.titulo === proyectoSeleccionado.titulo) {
-         proyecto.objEspecifico = proyectoSeleccionado.objEspecifico;
-       }
-     });
-     setProyecto(proyectoNuevo);
+  const editar = () => {
+    var proyectoNuevo = proyecto;
+    proyectoNuevo.map((proyecto) => {
+      if (proyecto._id === proyectoSeleccionado._id) {
+      }
+    });
+    setProyecto(proyectoNuevo);
     setModalEditar(false);
-   };
+  };
 
-   const eliminar = () => {
-     setProyecto(
-      proyecto.filter((proyecto) => proyecto.id !== proyectoSeleccionado.id)
-     );
-     setModalEliminar(false);
-   };
+  const eliminar = () => {
+    setProyecto(
+      proyecto.filter((proyecto) => proyecto._id !== proyectoSeleccionado._id)
+    );
+    setModalEliminar(false);
+  };
 
   const abrirModalInsertar = () => {
     setProyectoSeleccionado(null);
     setModalInsertar(true);
   };
 
- //  const insertar = () => {
+   //  const insertar = () => {
  //    var valorInsertar = proyectoSeleccionado;
  //    valorInsertar.id = proyecto.id;
   //   var proyectoNuevo = proyecto;
@@ -97,7 +85,7 @@ const dataProyectos = [
 
   const formik = useFormik({
     initialValues: initialValues(),
-    onSubmit: async (values, {resetForm}) => {
+    onSubmit: async (values, { resetForm }) => {
       resetForm();
       const {
         titulo,
@@ -142,7 +130,7 @@ const dataProyectos = [
       </button>
       <br />
       <br />
-       <table className="table table-bordered">
+      <table className="table table-bordered">
         <thead>
           <tr>
             <th>Titulo</th>
@@ -156,8 +144,8 @@ const dataProyectos = [
           </tr>
         </thead>
         <tbody>
-          {proyecto.map((elemento) => (
-            <tr>
+          {data && data.proyecto.map((elemento) => (
+            <tr key={elemento.id}>
               <td>{elemento.titulo}</td>
               <td>{elemento.objEspecifico}</td>
               <td>{elemento.presupuesto}</td>
@@ -184,9 +172,9 @@ const dataProyectos = [
             </tr>
           ))}
         </tbody>
-      </table> 
+      </table>
 
-       <Modal isOpen={modalEditar}>
+      <Modal isOpen={modalEditar}>
         <ModalHeader>
           <div>
             <h3>Editar Proyecto</h3>
@@ -280,9 +268,9 @@ const dataProyectos = [
             Cancelar
           </button>
         </ModalFooter>
-      </Modal> 
+      </Modal>
 
-       <Modal isOpen={modalEliminar}>
+      <Modal isOpen={modalEliminar}>
         <ModalBody>
           Estás Seguro que deseas eliminar el proyecto{" "}
           {proyectoSeleccionado && proyectoSeleccionado.titulo}
@@ -298,7 +286,7 @@ const dataProyectos = [
             No
           </button>
         </ModalFooter>
-      </Modal> 
+      </Modal>
 
       <Modal isOpen={modalInsertar}>
         <ModalHeader>
@@ -404,7 +392,7 @@ const dataProyectos = [
                 value="Inscribir"
                 onChange={formik.handleChange}
               />
-            
+
               <input
                 type="submit"
                 className="bg-red-800 w-25 mt-4 p-2 text-white hover:bg-gray-900 cursor-pointer rounded"
@@ -417,9 +405,9 @@ const dataProyectos = [
       </Modal>
     </div>
   );
-}
+};
 
-export default DataProyectos
+export default DataProyectos;
 
 function initialValues() {
   return {
