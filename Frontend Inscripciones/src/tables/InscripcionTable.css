@@ -1,0 +1,45 @@
+
+
+.container {
+   color: white;
+    
+}
+.container .table {
+    border-collapse: collapse;
+    width: 100%;
+  
+}
+
+thead {
+    background-color: #B2BABB
+}
+
+tbody {
+    background-color: #D7DBDD;
+}
+
+h4{
+    text-align: center;
+}
+
+.textField{
+    height: 32px;
+    width: 300px;
+    border: 3px solid #e5e5e5;
+    padding: 0 100px 0 200px;
+}
+
+/*.textField:hover {
+  curso*/
+    
+.btnBuscar{
+  height: 35px;
+  width: 70px;
+  text-align: center;
+  justify-content: center;
+}
+    
+.barraBusqueda{
+  float: right;
+  padding: 15px;
+}
