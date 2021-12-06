@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../../styles/tablaProyectos.css";
 import { Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
@@ -22,7 +23,7 @@ const DataProyectos = () => {
   }, [error]);
 
   const [newProject] = useMutation(NEW_PROJECT);
-  const dataProyectos = useState ([])
+  const dataProyectos = useState([]);
 
   const [proyecto, setProyecto] = useState(dataProyectos);
   const [modalEditar, setModalEditar] = useState(false);
@@ -55,7 +56,7 @@ const DataProyectos = () => {
   const editar = () => {
     var proyectoNuevo = proyecto;
     proyectoNuevo.map((proyecto) => {
-      if (proyecto._id === proyectoSeleccionado._id) {
+      if (proyecto.id === proyectoSeleccionado.id) {
       }
     });
     setProyecto(proyectoNuevo);
@@ -64,7 +65,7 @@ const DataProyectos = () => {
 
   const eliminar = () => {
     setProyecto(
-      proyecto.filter((proyecto) => proyecto._id !== proyectoSeleccionado._id)
+      proyecto.filter((proyecto) => proyecto.id !== proyectoSeleccionado.id)
     );
     setModalEliminar(false);
   };
@@ -74,14 +75,14 @@ const DataProyectos = () => {
     setModalInsertar(true);
   };
 
-   //  const insertar = () => {
- //    var valorInsertar = proyectoSeleccionado;
- //    valorInsertar.id = proyecto.id;
+  //  const insertar = () => {
+  //    var valorInsertar = proyectoSeleccionado;
+  //    valorInsertar.id = proyecto.id;
   //   var proyectoNuevo = proyecto;
   //  proyectoNuevo.push(valorInsertar);
-    // setProyecto(proyectoNuevo);
-   //  setModalInsertar(false);
- //  };
+  // setProyecto(proyectoNuevo);
+  //  setModalInsertar(false);
+  //  };
 
   const formik = useFormik({
     initialValues: initialValues(),
@@ -121,7 +122,7 @@ const DataProyectos = () => {
 
   return (
     <div className="Projects">
-      <h2 className="text-3xl font-poppins text-blackTem">
+      <h2 className="text-center text-3xl font-poppins text-blackTem">
         Proyectos Registrados
       </h2>
       <br />
@@ -130,7 +131,7 @@ const DataProyectos = () => {
       </button>
       <br />
       <br />
-      <table className="table table-bordered">
+      <table className="tabla table-bordered">
         <thead>
           <tr>
             <th>Titulo</th>
@@ -141,36 +142,37 @@ const DataProyectos = () => {
             <th>Estado</th>
             <th>Fase</th>
             <th>Fecha Inicial</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
-          {data && data.proyecto.map((elemento) => (
-            <tr key={elemento.id}>
-              <td>{elemento.titulo}</td>
-              <td>{elemento.objEspecifico}</td>
-              <td>{elemento.presupuesto}</td>
-              <td>{elemento.nombreLider}</td>
-              <td>{elemento.identificacionLider}</td>
-              <td>{elemento.estado}</td>
-              <td>{elemento.fase}</td>
-              <td>{elemento.fechaInicial}</td>
-              <td>
-                <button
-                  className="btn btn-primary"
-                  onClick={() => seleccionarProyecto(elemento, "Editar")}
-                >
-                  Ver
-                </button>{" "}
-                {"   "}
-                <button
-                  className="btn btn-danger"
-                  onClick={() => seleccionarProyecto(elemento, "Eliminar")}
-                >
-                  Eliminar
-                </button>
-              </td>
-            </tr>
-          ))}
+          {data &&
+            data.getProjects.map((elemento) => (
+              <tr key={elemento.id}>
+                <td>{elemento.titulo}</td>
+                <td>{elemento.objEspecifico}</td>
+                <td>{elemento.presupuesto}</td>
+                <td>{elemento.nombreLider}</td>
+                <td>{elemento.identificacionLider}</td>
+                <td>{elemento.estado}</td>
+                <td>{elemento.fase}</td>
+                <td>{elemento.fechaInicial}</td>
+                <td>
+                  <div>
+                    <i
+                      className="far fa-edit border-green-800"
+                      onClick={() => seleccionarProyecto(elemento, "Eliminar")}
+                    ></i>
+                  </div>
+                  <div>
+                    <i
+                      className="fas fa-trash-alt"
+                      onClick={() => seleccionarProyecto(elemento, "Eliminar")}
+                    ></i>
+                  </div>
+                </td>
+              </tr>
+            ))}
         </tbody>
       </table>
 

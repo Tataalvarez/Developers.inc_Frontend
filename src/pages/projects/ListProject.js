@@ -14,10 +14,10 @@ export default function Projects() {
   }
 
   function renderProjects ()  {
-    return data.projects.data.map((project) => {
+    return data.getProjects.map((project) => {
       return (
         <Project
-          key={project._id}
+          key={project.id}
           titulo={project.titulo}
           objEspecifico={project.objEspecifico}
           presupuesto={project.presupuesto}
@@ -27,7 +27,7 @@ export default function Projects() {
           fase={project.fase}
           fechaInicial={project.fechaInicial}
           clickCallback={handleCallback}
-        ></Project>
+        />
       );
     });
   }
