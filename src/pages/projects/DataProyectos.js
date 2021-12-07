@@ -8,6 +8,7 @@ import { useQuery } from "@apollo/client";
 import { useMutation } from "@apollo/client";
 import { NEW_PROJECT } from "../../graphql/project";
 import { GET_PROJECTS } from "../../graphql/project";
+import { DELETE_PROJECT } from "../../graphql/project";
 
 const DataProyectos = () => {
   const { data, error } = useQuery(GET_PROJECTS);
@@ -23,6 +24,7 @@ const DataProyectos = () => {
   }, [error]);
 
   const [newProject] = useMutation(NEW_PROJECT);
+  const [deleteProject] = useMutation(DELETE_PROJECT);
   const dataProyectos = useState([]);
 
   const [proyecto, setProyecto] = useState(dataProyectos);
@@ -64,8 +66,9 @@ const DataProyectos = () => {
   };
 
   const eliminar = () => {
-    setProyecto(
-      proyecto.filter((proyecto) => proyecto.id !== proyectoSeleccionado.id)
+    deleteProject(
+   //   proyecto.filter((proyecto) => proyecto.id !== proyectoSeleccionado.id)
+   data.deleteProject.map((id) => proyecto.id !== proyectoSeleccionado.id)
     );
     setModalEliminar(false);
   };
@@ -99,7 +102,7 @@ const DataProyectos = () => {
         fechaInicial,
       } = values;
       try {
-        const { data } = await newProject({
+        const { data } = await newProject ({
           variables: {
             input: {
               titulo,
@@ -161,7 +164,7 @@ const DataProyectos = () => {
                   <div>
                     <i
                       className="far fa-edit border-green-800"
-                      onClick={() => seleccionarProyecto(elemento, "Eliminar")}
+                      onClick={() => seleccionarProyecto(elemento, "Editar")}
                     ></i>
                   </div>
                   <div>
@@ -355,25 +358,33 @@ const DataProyectos = () => {
               <br />
 
               <label>Estado</label>
-              <input
-                className="form-control"
-                type="text"
-                name="estado"
-                value={formik.values.estado}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-              />
+              <select
+            name="estado"
+            className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            value={formik.values.estado}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+          >
+            <option value="" label="Estado del proyecto" />
+            <option value="ACTIVO" label="Activo" />
+            <option value="INACTIVO" label="Inactivo" />
+          </select>
               <br />
 
               <label>Fase</label>
-              <input
-                className="form-control"
-                type="text"
-                name="fase"
-                value={formik.values.fase}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-              />
+              <select
+            name="fase"
+            className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            value={formik.values.fase}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+          >
+            <option value="" label="Fase del proyecto" />
+            <option value="NULL" label="Null" />
+            <option value="INICIADO" label="Iniciado" />
+            <option value="ENDESARROLLO" label="En desarrollo" />
+            <option value="TERMINADO" label="Inactivo" />
+          </select>
               <br />
 
               <label>Fecha Inicial</label>
@@ -382,6 +393,17 @@ const DataProyectos = () => {
                 type="date"
                 name="fechaInicial"
                 value={formik.values.fechaInicial}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+              />
+              <br />
+
+              <label>Fecha Final</label>
+              <input
+                className="form-control"
+                type="date"
+                name="fechaFinal"
+                value={formik.values.fechaFinal}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
               />
