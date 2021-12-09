@@ -5,8 +5,9 @@
 import Home from "../pages/Home";
 import User from "../pages/auth/User";
 import Error404 from "../pages/Error404";
-import Projects from "../pages/Projects";
-import ListProjects from "../pages/Projects";
+import ListProjectsLeader from "../pages/ListProjectsLeader";
+import ListProjectsStudents from "../pages/ListProjectsStudents";
+import ListProjectsAdmin from "../pages/ListProjectsAdmin";
 const routes = [
   {
     path: "/",
@@ -14,13 +15,18 @@ const routes = [
     exact: true
   },
   {
-    path: "/projects",
-    element: <Projects/>,
+    path: "/listarproyectoslider",
+    element: <ListProjectsLeader/>,
     exact: true
   },
   {
-    path: "/listarproyectos",
-    element: <ListProjects/>,
+    path: "/listarproyectosestudiantes",
+    element: <ListProjectsStudents/>,
+    exact: true
+  },
+  {
+    path: "/listarproyectosadministrador",
+    element: <ListProjectsAdmin/>,
     exact: true
   },
   {

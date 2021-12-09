@@ -68,8 +68,8 @@ const DataProyectos = () => {
 
   const eliminar = () => {
     deleteProject(
-   //   proyecto.filter((proyecto) => proyecto.id !== proyectoSeleccionado.id)
-   deleteProject((id) => proyecto.id !== proyectoSeleccionado.id)
+      //   proyecto.filter((proyecto) => proyecto.id !== proyectoSeleccionado.id)
+      deleteProject((id) => proyecto.id !== proyectoSeleccionado.id)
     );
     setModalEliminar(true);
   };
@@ -104,7 +104,7 @@ const DataProyectos = () => {
         fechaFinal,
       } = values;
       try {
-        const { data } = await newProject ({
+        const { data } = await newProject({
           variables: {
             input: {
               titulo,
@@ -284,12 +284,17 @@ const DataProyectos = () => {
           {proyectoSeleccionado && proyectoSeleccionado.titulo}
         </ModalBody>
         <ModalFooter>
-          <button onClick={() => {
-            eliminar({
+          <button
+            onClick={() => {
+              eliminar({
                 variables: { data: proyecto.id },
               });
-             window.location.href = "/projects"
-            }} className='btn btn-primary'> Eliminar 
+              window.location.href = "/projects";
+            }}
+            className="btn btn-primary"
+          >
+            {" "}
+            Eliminar
           </button>
           <button
             className="btn btn-secondary"
@@ -366,32 +371,32 @@ const DataProyectos = () => {
 
               <label>Estado</label>
               <select
-            name="estado"
-            className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            value={formik.values.estado}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          >
-            <option value="" label="Estado del proyecto" />
-            <option value="ACTIVO" label="Activo" />
-            <option value="INACTIVO" label="Inactivo" />
-          </select>
+                name="estado"
+                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                value={formik.values.estado}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+              >
+                <option value="" label="Estado del proyecto" />
+                <option value="ACTIVO" label="Activo" />
+                <option value="INACTIVO" label="Inactivo" />
+              </select>
               <br />
 
               <label>Fase</label>
               <select
-            name="fase"
-            className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            value={formik.values.fase}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          >
-            <option value="" label="Fase del proyecto" />
-            <option value="NULL" label="Null" />
-            <option value="INICIADO" label="Iniciado" />
-            <option value="ENDESARROLLO" label="En desarrollo" />
-            <option value="TERMINADO" label="Inactivo" />
-          </select>
+                name="fase"
+                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                value={formik.values.fase}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+              >
+                <option value="" label="Fase del proyecto" />
+                <option value="NULL" label="Null" />
+                <option value="INICIADO" label="Iniciado" />
+                <option value="ENDESARROLLO" label="En desarrollo" />
+                <option value="TERMINADO" label="Inactivo" />
+              </select>
               <br />
 
               <label>Fecha Inicial</label>
@@ -417,20 +422,24 @@ const DataProyectos = () => {
               <br />
             </div>
             <ModalFooter>
-            <button
-            onClick={() => {
-            setModalInsertar({
-                variables: { proyecto: proyecto.id },
-              });
-             window.location.href = "/projects"
-            }} className='btn btn-primary'> Inscribir 
-          </button>
-                <button
-            className="btn btn-danger"
-            onClick={() => setModalInsertar(false)}
-          >
-            Cancelar
-          </button>
+              <button
+                onClick={() => {
+                  setModalInsertar({
+                    variables: { proyecto: proyecto.id },
+                  });
+                  window.location.href = "/projects";
+                }}
+                className="btn btn-primary"
+              >
+                {" "}
+                Inscribir
+              </button>
+              <button
+                className="btn btn-danger"
+                onClick={() => setModalInsertar(false)}
+              >
+                Cancelar
+              </button>
             </ModalFooter>
           </form>
         </ModalBody>
@@ -451,6 +460,6 @@ function initialValues() {
     estado: "",
     fase: "",
     fechaInicial: "",
-    fechFinal: "" ,
+    fechaFinal: "",
   };
 }
