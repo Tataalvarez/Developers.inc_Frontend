@@ -1,5 +1,5 @@
 // Modulos
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Componentes
 import Home from "../pages/Home";
@@ -11,11 +11,11 @@ export default function Navigation() {
   return (
     <Router>
       <Layout>
-        <Switch>
+        <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/user" element={<User />} />
           <Route path="*" element={<Error404 />} />
-        </Switch>
+        </Routes>
       </Layout>
     </Router>
   );

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useMutation } from "@apollo/client";
@@ -34,8 +35,10 @@ export default function Login() {
           },
         });
         const { token } = data.authUser;
+        console.log(authUser)
         setToken(token);
         setUser(decodeToken(token));
+        <Link to='/home' />
       } catch (error) {
         setMessage(error.message);
         setTimeout(() => {
