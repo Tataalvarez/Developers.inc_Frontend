@@ -6,11 +6,17 @@ import Home from "../pages/Home";
 import User from "../pages/auth/User";
 import Error404 from "../pages/Error404";
 import Projects from "../pages/Projects";
+import Perfil from "../pages/usuarios/GestionPerfil1";
 import ListProjects from "../pages/Projects";
 const routes = [
   {
     path: "/",
     element: <Home/>,
+    exact: true
+  },
+  {
+    path: "/perfil",
+    element: <Perfil/>,
     exact: true
   },
   {

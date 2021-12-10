@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // Componentes
 import Home from "../pages/Home";
 import User from "../pages/auth/User";
+import Perfil from "../pages/usuarios/GestionPerfil1";
 import NewProject from "../pages/projects/NewProject";
 import Error404 from "../pages/Error404";
 import Layout from "../components/Layout";
@@ -17,6 +18,7 @@ export default function Navigation() {
         <Routes>
           <Route exact path="/home" element={<Home />} />
           <Route path="/user" element={<User />} />
+          <Route path="/perfil" element={<Perfil />} />
           <Route path="/projects" element={<DataProyectos />} />
           <Route path="/newproject" element={<NewProject />} />
           <Route path="/listarproyectos" element={<ListProject />} />
