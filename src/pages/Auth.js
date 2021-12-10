@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 
 // Componentes
-import LoginForm from "./LoginForm";
-import RegisterForm from "./RegisterForm";
+import LoginForm from "../components/auth/LoginForm";
+import RegisterForm from "../components/auth/RegisterForm";
 
 export default function Auth() {
   const [showLogin, setShowLogin] = useState(true);
