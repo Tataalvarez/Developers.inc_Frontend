@@ -9,7 +9,7 @@ import ListProjectsLeader from "../pages/ListProjectsLeader";
 import ListProjectsStudents from "../pages/ListProjectsStudents";
 import ListProjectsAdmin from "../pages/ListProjectsAdmin";
 import  Inscriptions from "../pages/inscriptions/Inscriptions";
-
+import  ListInscriptions from "../pages/inscriptions/ListInscriptions";
 
 const routes = [
   {
@@ -40,6 +40,11 @@ const routes = [
   {
     path:"/inscripciones",
     element:<Inscriptions/>,
+    exact: true
+  },
+  {
+    path:"/listarinscripciones",
+    element:<ListInscriptions/>,
     exact: true
   },
   {

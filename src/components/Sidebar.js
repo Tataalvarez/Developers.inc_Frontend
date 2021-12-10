@@ -34,9 +34,14 @@ export default function Sidebar() {
             ListarProyectosEstudiantes
           </NavLink>       
         </li>
-        <li className={location.pathname === "/inscripciones" ? "bg-blue-800 p-2 rounded" : "p-2"}>
+        <li className={location.pathname === "/nuevainscripciones" ? "bg-blue-800 p-2 rounded" : "p-2"}>
           <NavLink to="/nuevainscripcion" className="text-white">
-            Añadir y ver Inscripciones
+            Añadir Inscripción
+          </NavLink>       
+        </li>
+        <li className={location.pathname === "/listarinscripciones" ? "bg-blue-800 p-2 rounded" : "p-2"}>
+          <NavLink to="/listarinscripcion" className="text-white">
+            Listar Inscripciones
           </NavLink>       
         </li>
         

@@ -138,7 +138,7 @@ const DataIncripciones = () => {
         </thead>
         <tbody>
           {data &&
-            data.getProjects.map((elemento) => (
+            data.getIncriptios.map((elemento) => (
               <tr key={elemento.id}>
                 <td>{elemento.identificador_estudiante}</td>
                 <td>{elemento.identificador_proyecto}</td>
