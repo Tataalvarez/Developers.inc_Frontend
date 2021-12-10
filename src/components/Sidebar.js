@@ -19,10 +19,20 @@ export default function Sidebar() {
             Usuarios
           </NavLink>
         </li>
-        <li className={location.pathname === "/proyectos" ? "bg-blue-800 p-2 rounded" : "p-2"}>
-          <NavLink to="/proyectos" className="text-white">
-            Proyectos
+        <li className={location.pathname === "/listarproyectoslider" ? "bg-blue-800 p-2 rounded" : "p-2"}>
+          <NavLink to="/listarproyectoslider" className="text-white">
+            List Proy Lider
           </NavLink>
+        </li>
+        <li className={location.pathname === "/listarproyectosadministrador" ? "bg-blue-800 p-2 rounded" : "p-2"}>
+          <NavLink to="/listarproyectosadministrador" className="text-white">
+            List Proy Admin
+          </NavLink>       
+        </li>
+        <li className={location.pathname === "/listarproyectosestudiantes" ? "bg-blue-800 p-2 rounded" : "p-2"}>
+          <NavLink to="/listarproyectosestudiantes" className="text-white">
+            List Proy Estu
+          </NavLink>       
         </li>
         <li className={location.pathname === "/avances" ? "bg-blue-800 p-2 rounded" : "p-2"}>
           <NavLink to="/avances" className="text-white">
