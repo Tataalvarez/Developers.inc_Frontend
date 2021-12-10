@@ -1,15 +1,13 @@
-import React, { Fragment } from "react";
+import React from 'react'
 import { Helmet } from "react-helmet";
 import { useLocation } from "react-router";
-import Header from "./Header";
+import Header from "../Header";
+import Sidebar from "../Sidebar";
 
-// Componentes
-import Sidebar from "./Sidebar";
-
-export default function Layout({ children }) {
-  let location = useLocation();
+export default function LiderLayout(props) {
+  console.log(props)
   return (
-    <Fragment>
+    <>
       <Helmet>
         <title>Ciclo 4 - Desarrollo Web</title>
         <link
@@ -33,11 +31,11 @@ export default function Layout({ children }) {
           <Sidebar />
           <main className="sm:w-2/3 xl:w-4/5 sm:min-h-screen">
             <Header/>
-            {children}
+            {props.children}
           </main>
         </div>
       </div>
       {/* )}; */}
-    </Fragment>
-  );
+    </>
+  )
 }

@@ -7,7 +7,7 @@ import client from './config/apollo';
 import { getToken, removeToken } from "./utils/token";
 import AuthContext from "./context/AuthContext";
 import Auth from "./pages/auth/Auth";
-import Navigation from "./routers/Navigation";
+import Navigation from "./routes/Navigation";
 
 export default function App() {
   const [auth, setAuth] = useState(undefined);
