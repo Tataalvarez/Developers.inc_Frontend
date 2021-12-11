@@ -17,14 +17,15 @@ export default function Navigation() {
   // const getUsername = (email) => {
   //   return email.substring(0, email.lastIndexOf("@"))
   // }
-  // const username = getUsername(auth.email)
+  // const username = getUsername(email)
+  // console.log(username)
 
   return (
     <Router>
       <Layout >
         <Routes>
           <Route path="/home" element={<Home />} />
-          <Route path={`/${auth.email}`} element={<User />} />
+          <Route path={`/${auth.nombre}`} element={<User />} />
           <Route path="/listarproyectoslider" element={<ListProjectsLeader />} />
           <Route path="/listarproyectosadministrador" element={<ListProjectsAdmin />} />
           <Route path="/listarproyectosestudiantes" element={<ListProjectsStudents />} />

@@ -11,11 +11,11 @@ export default function SettignsForm(props) {
   const navigate = useNavigate();
   const client = useApolloClient();
 
-  // const getUsername = (email) => {
+  // function getUsername(email) {
   //   return email.substring(0, email.lastIndexOf("@"))
   // }
 
-  // const username = getUsername(auth.email)
+  // const username = getUsername(email)
 
   const onLogout = () => {
     client.clearStore();
@@ -29,7 +29,7 @@ export default function SettignsForm(props) {
       {/* <button>Cambiar email</button> */}
       {/* <button>Descripcion</button> */}
       <div className="mr-4">
-        <Link to={`/${auth.email}`}>
+        <Link to={`/${auth.nombre}`}>
           <img
             className="object-cover w-8 h-8 border-2 border-blue-800 rounded-full cursor-pointer"
             src={avatar}
@@ -38,7 +38,7 @@ export default function SettignsForm(props) {
         </Link>
       </div>
       <button className="btn-primary" onClick={onLogout}>
-        Salir
+        salir
       </button>
       {/* <button onClick={() => setShowModal(false)}>Cancelar</button> */}
     </div>
