@@ -35,7 +35,6 @@ export default function Login() {
           },
         });
         const { token } = data.authUser;
-        console.log(authUser)
         setToken(token);
         setUser(decodeToken(token));
         <Link to='/home' />

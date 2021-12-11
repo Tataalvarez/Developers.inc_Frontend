@@ -29,6 +29,7 @@ export default function Registro(props) {
         .required('El rol es obligatorio'),
     }),
     onSubmit: async (values, { setSubmitting }) => {
+      
       const { nombre, apellido, identificacion, email, password, rol } = values;
       try {
         const { data } = await newUser({
@@ -44,6 +45,7 @@ export default function Registro(props) {
           },
         });
         console.log(data);
+        
         // Usuario creado correctamente
         setMessage(`El usuario: ${data.newUser.nombre} se creó correctamente`);
         setTimeout(() => {

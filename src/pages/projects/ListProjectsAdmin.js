@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/tablaProyectos.css";
 import { Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
 import { toast } from "react-toastify";

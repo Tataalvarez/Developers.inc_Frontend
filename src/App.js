@@ -4,7 +4,7 @@ import { ApolloProvider } from "@apollo/client";
 
 // Componentes
 import client from './config/apollo';
-import { getToken, removeToken } from "./utils/token";
+import { getToken, decodeToken, removeToken } from "./utils/token";
 import AuthContext from "./context/AuthContext";
 import Auth from "./pages/Auth";
 import Navigation from "./routes/Navigation";
@@ -17,7 +17,7 @@ export default function App() {
     if (!token) {
       setAuth(null);
     } else {
-      setAuth(token);
+      setAuth(decodeToken(token));
     }
   }, []);
 

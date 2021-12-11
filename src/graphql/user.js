@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const GET_USERS = gql`
   query getUsers {
@@ -10,6 +10,21 @@ export const GET_USERS = gql`
       email
       rol
       createdAt
+    }
+  }
+`;
+
+export const GET_USER = gql`
+  query getUser($email: String) {
+    getUser(email: $email) {
+      nombre
+      apellido
+      email
+      rol
+      identificacion
+      estado
+      createdAt
+      id
     }
   }
 `;
