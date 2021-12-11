@@ -76,8 +76,7 @@ const DataIncripciones = () => {
   };
 
   //  const insertar = () => {
-  //    var valorInsertar = inscripcionSeleccionada;
-  //    valorInsertar.id = inscripcion.id;
+   //    valorInsertar.id = inscripcion.id;
   //   var inscripcionNueva = inscripcion;
   //  inscripcionNueva.push(valorInsertar);
   // setInscripcion(inscripcionNueva);
@@ -120,7 +119,7 @@ const DataIncripciones = () => {
         Inscripciones Realizadas
       </h2>
       <br />
-      <button className="btn btn-success" onClick={() => abrirModalInsertar()}>
+      <button className="btn btn-dark" onClick={() => abrirModalInsertar()}>
         Nueva Inscripción
       </button>
       <br />
@@ -128,6 +127,7 @@ const DataIncripciones = () => {
       <table className="tabla table-bordered">
         <thead>
           <tr>
+          <th>Id Inscripción</th>
             <th>Identificador del Estudiante</th>
             <th>Identificador del Proyecto</th>
             <th>Estado</th>
@@ -140,6 +140,7 @@ const DataIncripciones = () => {
           {data &&
             data.getInscriptions.map((elemento) => (
               <tr key={elemento.id}>
+                <td>{elemento.id}</td>
                 <td>{elemento.identificador_estudiante}</td>
                 <td>{elemento.identificador_proyecto}</td>
                 <td>{elemento.estado}</td>
@@ -175,7 +176,6 @@ const DataIncripciones = () => {
             <label>Identificador del Estudiante</label>
             <input
               className="form-control"
-              readOnly
               type="text"
               name="identificador_estudiante"
               value={inscripcionSeleccionada && inscripcionSeleccionada.identificador_estudiante}
@@ -185,7 +185,6 @@ const DataIncripciones = () => {
             <label>Identificador del Proyecto</label>
             <input
               className="form-control"
-              readOnly
               type="text"
               name="identificador_proyecto"
               value={inscripcionSeleccionada && inscripcionSeleccionada.identificador_proyecto}
@@ -224,11 +223,11 @@ const DataIncripciones = () => {
           </div>
         </ModalBody>
         <ModalFooter>
-          <button className="btn btn-primary" onClick={() => editar()}>
+          <button className="btn btn-success" onClick={() => editar()}>
             Editar
           </button>
           <button
-            className="btn btn-danger"
+            className="btn btn-dark"
             onClick={() => setModalEditar(false)}
           >
             Cancelar
@@ -249,13 +248,13 @@ const DataIncripciones = () => {
               });
               window.location.href = "/inscriptions";
             }}
-            className="btn btn-primary"
+            className="btn btn-danger"
           >
             {" "}
             Eliminar
           </button>
           <button
-            className="btn btn-secondary"
+            className="btn btn-dark"
             onClick={() => setModalEliminar(false)}
           >
             No
@@ -337,13 +336,13 @@ const DataIncripciones = () => {
                   });
                   window.location.href = "/inscriptions";
                 }}
-                className="btn btn-primary"
+                className="btn btn-success"
               >
                 {" "}
-                Inscribir
+                Hacer Inscripción
               </button>
               <button
-                className="btn btn-danger"
+                className="btn btn-secondary"
                 onClick={() => setModalInsertar(false)}
               >
                 Cancelar
