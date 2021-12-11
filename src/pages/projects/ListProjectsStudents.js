@@ -204,7 +204,7 @@ const DataProyectos = () => {
           </button>
         </ModalFooter>
       </Modal>
-    </div>
+      </div>
   );
 };
 

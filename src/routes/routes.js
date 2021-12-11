@@ -4,16 +4,23 @@
 // import Layout from "../components/layout/Layout";
 import Home from "../pages/Home";
 import User from "../pages/auth/User";
-import Error404 from "../pages/Error404";
 import ListProjectsLeader from "../pages/ListProjectsLeader";
 import ListProjectsStudents from "../pages/ListProjectsStudents";
 import ListProjectsAdmin from "../pages/ListProjectsAdmin";
-import  Inscriptions from "../pages/inscriptions/Inscriptions";
+import Inscriptions from "../pages/inscriptions/Inscriptions";
+
+
+import Error404 from "../pages/Error404";
 
 const routes = [
   {
     path: "/",
     element: <Home/>,
+    exact: true
+  },
+  {
+    path: "/user",
+    element: <User/>,
     exact: true
   },
   {
@@ -32,13 +39,8 @@ const routes = [
     exact: true
   },
   {
-    path: "/user",
-    element: <User/>,
-    exact: true
-  },
-  {
-    path:"/inscripciones",
-    element:<Inscriptions/>,
+    path: "/inscriptions",
+    element: <Inscriptions/>,
     exact: true
   },
   {

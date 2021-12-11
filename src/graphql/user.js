@@ -8,9 +8,8 @@ export const GET_USERS = gql`
       apellido
       identificacion
       email
-      estado
+      rol
       createdAt
-      updatedAt
     }
   }
 `;
@@ -23,6 +22,7 @@ export const NEW_USER = gql`
       apellido
       identificacion
       email
+      rol
       createdAt
     }
   }

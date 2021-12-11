@@ -115,7 +115,7 @@ const DataIncripciones = () => {
   });
 
   return (
-    <div className="Projects">
+    <div className="Inscriptions">
       <h2 className="text-center text-3xl font-poppins text-blackTem">
         Inscripciones Realizadas
       </h2>
@@ -138,7 +138,7 @@ const DataIncripciones = () => {
         </thead>
         <tbody>
           {data &&
-            data.getIncriptios.map((elemento) => (
+            data.getInscriptions.map((elemento) => (
               <tr key={elemento.id}>
                 <td>{elemento.identificador_estudiante}</td>
                 <td>{elemento.identificador_proyecto}</td>
@@ -239,7 +239,7 @@ const DataIncripciones = () => {
       <Modal isOpen={modalEliminar}>
         <ModalBody>
           Estás Seguro que deseas eliminar el inscripcion{" "}
-          {inscripcionSeleccionada && inscripcionSeleccionada.titulo}
+          {inscripcionSeleccionada && inscripcionSeleccionada.id}
         </ModalBody>
         <ModalFooter>
           <button
@@ -283,7 +283,7 @@ const DataIncripciones = () => {
               />
               <br />
 
-              <label>Identificador del Estudiante</label>
+              <label>Identificador del Proyecto</label>
               <input
                 className="form-control"
                 type="text"
@@ -302,9 +302,8 @@ const DataIncripciones = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
               >
-                <option value="" label="Estado de la inscripcion" />
+                 <option value="RECHAZADA" label="Rechazada" />
                 <option value="ACEPTADA" label="Aceptada" />
-                <option value="RECHAZADA" label="Rechazada" />
               </select>
               <br />
 

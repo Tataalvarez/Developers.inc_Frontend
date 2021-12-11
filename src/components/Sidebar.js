@@ -14,37 +14,31 @@ export default function Sidebar() {
             Home
           </NavLink>
         </li>
-        <li className={location.pathname === "/perfil" ? "bg-blue-800 p-2 rounded" : "p-2"}>
-          <NavLink to="/perfil" className="text-white">
-            Perfil
+        <li className={location.pathname === "/usuarios" ? "bg-blue-800 p-2 rounded" : "p-2"}>
+          <NavLink to="/users" className="text-white">
+            Usuarios
           </NavLink>
         </li>
         <li className={location.pathname === "/listarproyectoslider" ? "bg-blue-800 p-2 rounded" : "p-2"}>
           <NavLink to="/listarproyectoslider" className="text-white">
-            ListarProyectosLider
+            List Proy Lider
           </NavLink>
         </li>
         <li className={location.pathname === "/listarproyectosadministrador" ? "bg-blue-800 p-2 rounded" : "p-2"}>
           <NavLink to="/listarproyectosadministrador" className="text-white">
-            ListarProyectosAdministrador
+            List Proy Admin
           </NavLink>       
         </li>
         <li className={location.pathname === "/listarproyectosestudiantes" ? "bg-blue-800 p-2 rounded" : "p-2"}>
           <NavLink to="/listarproyectosestudiantes" className="text-white">
-            ListarProyectosEstudiantes
+            List Proy Estu
           </NavLink>       
         </li>
-        <li className={location.pathname === "/nuevainscripciones" ? "bg-blue-800 p-2 rounded" : "p-2"}>
-          <NavLink to="/nuevainscripcion" className="text-white">
-            Añadir Inscripción
+        <li className={location.pathname === "/inscriptions" ? "bg-blue-800 p-2 rounded" : "p-2"}>
+          <NavLink to="/inscriptions" className="text-white">
+            Inscripciones
           </NavLink>       
         </li>
-        <li className={location.pathname === "/listarinscripciones" ? "bg-blue-800 p-2 rounded" : "p-2"}>
-          <NavLink to="/listarinscripcion" className="text-white">
-            Listar Inscripciones
-          </NavLink>       
-        </li>
-        
         <li className={location.pathname === "/avances" ? "bg-blue-800 p-2 rounded" : "p-2"}>
           <NavLink to="/avances" className="text-white">
             Avances
