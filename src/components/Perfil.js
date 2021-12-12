@@ -21,10 +21,10 @@ export default function Perfil(props) {
   // }
 
   return (
-    <div className="grid grid-cols-3 gap-4 items-center bg-blue-100 border-l-5 text-black p-6 content-center">
+    <div className="grid grid-cols-4 gap-4 items-center bg-blue-100 border-l-5 text-black p-6 content-center">
       <div className="justify-self-end">
         <img
-          className="object-cover w-32 rounded-full p-1 border-2 border-blue-800 cursor-pointer"
+          className="col-span-2 object-cover w-32 rounded-full p-1 border-2 border-blue-800 cursor-pointer"
           src={avatar}
           alt="avatar"
         />
@@ -32,9 +32,10 @@ export default function Perfil(props) {
       <div className="col-span-2 justify-self-start">
         <div>HeaderPerfil</div>
         <div className="LowerCase">
-          <p className="mb-0"><span className="font-bold capitalize">nombre:</span> {getUser.nombre+" "+getUser.apellido}</p>
-          <p className="mb-0"><span className="font-bold capitalize">identificacion:</span> {getUser.identificacion}</p>
+          <p className="mb-0 uppercase"><span className="font-bold capitalize">nombre:</span> {getUser.nombre+" "+getUser.apellido}</p>
+          <p className="mb-0 uppercase"><span className="font-bold capitalize">identificacion:</span> {getUser.identificacion}</p>
           <p className="mb-0"><span className="font-bold capitalize">email:</span> {getUser.email}</p>
+          <p className="mb-0 uppercase"><span className="font-bold capitalize">estado:</span> {getUser.estado}</p>
           <p><span className="font-bold capitalize">rol:</span> {getUser.rol}</p>
         </div>
         {/* <div>Publicaciones</div> */}

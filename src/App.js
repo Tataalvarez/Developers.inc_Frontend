@@ -7,7 +7,7 @@ import client from './config/apollo';
 import { getToken, decodeToken, removeToken } from "./utils/token";
 import AuthContext from "./context/AuthContext";
 import Auth from "./pages/Auth";
-import Navigation from "./routes/Navigation";
+import Louding from "./components/Louding";
 
 export default function App() {
   const [auth, setAuth] = useState(undefined);
@@ -29,6 +29,7 @@ export default function App() {
   const setUser = (user) => {
     setAuth(user);
   };
+  console.log(setUser);
 
   const authData = useMemo(
     () => ({
@@ -44,7 +45,7 @@ export default function App() {
   return (
     <ApolloProvider client={client}>
       <AuthContext.Provider value={authData}>
-        {!auth ? <Auth /> : <Navigation />}
+        {!auth ? <Auth /> : <Louding auth={auth}/>}
       </AuthContext.Provider>
     </ApolloProvider>
   );

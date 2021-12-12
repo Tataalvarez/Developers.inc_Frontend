@@ -22,9 +22,9 @@ export default function Navigation() {
 
   return (
     <Router>
-      <Layout auth={auth}>
+      <Layout>
         <Routes>
-          <Route path={`/${auth.nombre}/home`} element={<Home />} />
+          {/* <Route path={`/${auth.nombre}/home`} element={<Home />} /> */}
           <Route path={`/${auth.nombre}/perfil`} element={<User />} />
           <Route path="/listarproyectoslider" element={<ListProjectsLeader />} />
           <Route path="/listarproyectosadministrador" element={<ListProjectsAdmin />} />
