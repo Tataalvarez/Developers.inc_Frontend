@@ -29,15 +29,15 @@ export default function SettignsForm(props) {
       {/* <button>Cambiar email</button> */}
       {/* <button>Descripcion</button> */}
       <div className="mr-4">
-        <Link to={`/${auth.nombre}`}>
+        <Link to={`/${auth.nombre}/perfil`}>
           <img
-            className="object-cover w-8 h-8 border-2 border-blue-800 rounded-full cursor-pointer"
+            className="w-8 h-8 border-4 border-blue-800 rounded-full object-cover cursor-pointer"
             src={avatar}
             alt="avatar"
           />
         </Link>
       </div>
-      <button className="btn-primary" onClick={onLogout}>
+      <button className="btn-primary capitalize" onClick={onLogout}>
         salir
       </button>
       {/* <button onClick={() => setShowModal(false)}>Cancelar</button> */}

@@ -64,7 +64,7 @@ export default function Registro(props) {
 
   const showMessage = () => {
     return (
-      <div className="bg-red-100 border-red-500 border-l-4 text-red-700 text-xs py-2 px-3 w-full my-3">
+      <div className="show-message">
         <p>{message}</p>
       </div>
     );

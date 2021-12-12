@@ -24,7 +24,7 @@ export default function Perfil(props) {
     <div className="grid grid-cols-3 gap-4 items-center bg-blue-100 border-l-5 text-black p-6 content-center">
       <div className="justify-self-end">
         <img
-          className="object-cover w-32 rounded-full border-2 border-blue-800 cursor-pointer"
+          className="object-cover w-32 rounded-full p-1 border-2 border-blue-800 cursor-pointer"
           src={avatar}
           alt="avatar"
         />
@@ -38,7 +38,7 @@ export default function Perfil(props) {
           <p><span className="font-bold capitalize">rol:</span> {getUser.rol}</p>
         </div>
         {/* <div>Publicaciones</div> */}
-        <PerfilUserModal getUser={getUser} />
+        <PerfilUserModal getUser={getUser}/>
       </div>
     </div>
   );
