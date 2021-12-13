@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useMutation } from "@apollo/client";
 import { LOGIN } from "../../graphql/user";
 import { setToken, decodeToken } from "../../utils/token";
 import useAuth from "../../hooks/useAuth";
+// import Loading from "../Loading";
 
 export default function Login() {
   const [message, setMessage] = useState(null);
@@ -37,7 +38,7 @@ export default function Login() {
         const { token } = data.authUser;
         setToken(token);
         setUser(decodeToken(token));
-        <Link to='/home' />
+        // <Link to="/perfil" />
       } catch (error) {
         setMessage(error.message);
         setTimeout(() => {

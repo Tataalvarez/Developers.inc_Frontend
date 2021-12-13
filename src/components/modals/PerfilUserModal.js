@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import FormPerfilModal from "./FormPerfilModal";
 
-export default function Modal(props) {
+export default function PerfilUserModal(props) {
   const { getUser } = props;
   // console.log(getUser)
   const [showModal, setShowModal] = useState(false);

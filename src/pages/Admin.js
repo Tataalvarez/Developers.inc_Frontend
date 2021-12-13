@@ -1,14 +1,26 @@
 import React from "react";
-import Perfil from "../components/Perfil";
+import { useNavigate, Link } from "react-router-dom";
+import { useApolloClient } from "@apollo/client";
+import useAuth from "../hooks/useAuth";
 
 export default function Admin(props) {
-  const { auth } = props;
+  const { setShowModal } = props;
+  const { auth, logout } = useAuth();
+  const navigate = useNavigate();
+  const client = useApolloClient();
+
+  const onLogout = () => {
+    client.clearStore();
+    logout();
+    navigate("/");
+  };
+
   return (
     <>
       {/* <Perfil email={auth.email} /> */}
 
       <div class="flex h-screen">
-        <div class="px-4 py-2 bg-gray-200 bg-indigo-600 lg:w-1/4">
+        <div class="px-4 py-2 bg-gray-200 bg-gray-900 lg:w-1/4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="inline w-8 h-8 text-white lg:hidden"
@@ -25,7 +37,7 @@ export default function Admin(props) {
           </svg>
           <div class="hidden lg:block">
             <div class="my-2 mb-6">
-              <h1 class="text-2xl font-bold text-white">Admin Dashboard</h1>
+              <h1 class="text-xl font-bold text-white text-center">{auth.rol}</h1>
             </div>
             <ul>
               <li class="mb-6">
@@ -54,8 +66,7 @@ export default function Admin(props) {
                 </div>
               </li>
               <li class="mb-2 rounded hover:shadow hover:bg-gray-800">
-                <a
-                  href="#"
+                <Link
                   class="inline-block w-full h-full px-3 py-2 font-bold text-white"
                 >
                   <svg
@@ -73,11 +84,10 @@ export default function Admin(props) {
                     />
                   </svg>
                   Home
-                </a>
+                </Link>
               </li>
               <li class="mb-2 bg-gray-800 rounded shadow">
-                <a
-                  href="#"
+                <Link
                   class="inline-block w-full h-full px-3 py-2 font-bold text-white"
                 >
                   <svg
@@ -93,11 +103,10 @@ export default function Admin(props) {
                     />
                   </svg>
                   Blogs
-                </a>
+                </Link>
               </li>
               <li class="mb-2 rounded hover:shadow hover:bg-gray-800">
-                <a
-                  href="#"
+                <Link
                   class="inline-block w-full h-full px-3 py-2 font-bold text-white"
                 >
                   <svg
@@ -115,29 +124,12 @@ export default function Admin(props) {
                     />
                   </svg>
                   Reports
-                </a>
+                </Link>
               </li>
               <li class="mb-2 rounded hover:shadow hover:bg-gray-800">
-                <a
-                  href="#"
-                  class="inline-block w-full h-full px-3 py-2 font-bold text-white"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="inline-block w-6 h-6 mr-2 -mt-2"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
-                  Inbox
-                </a>
+                <button className="w-full btn-primary" onClick={onLogout}>
+                  Salir
+                </button>
               </li>
             </ul>
           </div>

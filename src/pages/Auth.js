@@ -10,7 +10,7 @@ export default function Auth() {
   
   return (
     <>
-      <div className="flex justify-center mt-52">
+      <div className="flex justify-center mt-10">
         <div className="w-full max-w-xs">
           <div className="bg-blue-200 rounded shadow-md px-6 pt-4 pb-4">
             <h2 className="text-center text-2xl text-black font-black mb-4">

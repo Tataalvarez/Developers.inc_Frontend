@@ -31,7 +31,7 @@ export default function Perfil(props) {
       </div>
       <div className="col-span-2 justify-self-start">
         {/* <div>HeaderPerfil</div> */}
-        <div className="LowerCase">
+        <div className="LowerCase mb-2">
           <p className="mb-0 uppercase"><span className="font-bold capitalize">nombre:</span> {getUser.nombre+" "+getUser.apellido}</p>
           <p className="mb-0 uppercase"><span className="font-bold capitalize">identificacion:</span> {getUser.identificacion}</p>
           <p className="mb-0"><span className="font-bold capitalize">email:</span> {getUser.email}</p>

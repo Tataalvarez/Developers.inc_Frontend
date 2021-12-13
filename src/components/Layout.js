@@ -1,13 +1,13 @@
 import React, { Fragment } from "react";
 import { Helmet } from "react-helmet";
-import { useLocation } from "react-router";
+// import { useLocation } from "react-router";
 import Header from "./Header";
 
 // Componentes
 import Sidebar from "./Sidebar";
 
 export default function Layout({ children }) {
-  let location = useLocation();
+  // let location = useLocation();
   return (
     <Fragment>
       <Helmet>

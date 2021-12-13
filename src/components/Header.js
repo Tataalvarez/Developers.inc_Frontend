@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <div className="flex justify-between bg-blue-300 border-b-5 text-black p-6">
       <div className="capitalize">{username}</div>
-      <div>Buscador</div>
+      <div>{auth.rol}</div>
       <div>
         <SettignsForm />
       </div>
