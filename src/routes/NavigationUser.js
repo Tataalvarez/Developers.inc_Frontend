@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
 // Componentes
-import Home from "../pages/Home";
+// import Home from "../pages/Home";
 import User from "../pages/User";
 import Error404 from "../pages/Error404";
 import Layout from "../components/Layout";
@@ -11,7 +11,7 @@ import ListProjectsAdmin from "../pages/projects/ListProjectsAdmin";
 import ListProjectsStudents from "../pages/projects/ListProjectsStudents";
 import ListProjectsLeader from "../pages/projects/ListProjectsLeader";
 
-export default function Navigation() {
+export default function NavigationUser() {
   const { auth } = useAuth();
   // console.log(auth.email)
   // const getUsername = (email) => {

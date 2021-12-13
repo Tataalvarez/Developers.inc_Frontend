@@ -3,7 +3,7 @@ import React from 'react'
 import useAuth from '../hooks/useAuth';
 import Perfil from '../components/Perfil';
 
-export default function User() {
+export default function Lider(props) {
   const {auth} = useAuth();
   // const {email, id} = useParams();
   // console.log(auth.email)

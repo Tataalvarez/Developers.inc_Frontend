@@ -3,7 +3,7 @@ import FormPerfilModal from "./FormPerfilModal";
 
 export default function Modal(props) {
   const { getUser } = props;
-  console.log(getUser)
+  // console.log(getUser)
   const [showModal, setShowModal] = useState(false);
   return (
     <>

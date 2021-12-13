@@ -14,7 +14,7 @@ export default function Perfil(props) {
   if (loading) return null;
   if (error) return <p>Usuario no encontrado</p>;
   const { getUser } = data;
-  console.log(getUser);
+  // console.log(getUser);
 
   // function capitalize(word) {
   //   return word[0].toUpperCase + word.slice(1).toLowerCase()
@@ -30,7 +30,7 @@ export default function Perfil(props) {
         />
       </div>
       <div className="col-span-2 justify-self-start">
-        <div>HeaderPerfil</div>
+        {/* <div>HeaderPerfil</div> */}
         <div className="LowerCase">
           <p className="mb-0 uppercase"><span className="font-bold capitalize">nombre:</span> {getUser.nombre+" "+getUser.apellido}</p>
           <p className="mb-0 uppercase"><span className="font-bold capitalize">identificacion:</span> {getUser.identificacion}</p>

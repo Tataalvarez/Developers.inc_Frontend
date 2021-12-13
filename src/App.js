@@ -29,7 +29,7 @@ export default function App() {
   const setUser = (user) => {
     setAuth(user);
   };
-  console.log(setUser);
+  // console.log(setUser);
 
   const authData = useMemo(
     () => ({
