@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/tablaProyectos.css";
 import { Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
+import { useFormik } from "formik";
 import { toast } from "react-toastify";
 import { useQuery } from "@apollo/client";
 import { useMutation } from "@apollo/client";
@@ -43,15 +44,18 @@ const DataProyectos = () => {
     caso === "Editar" ? setModalEditar(true) : editar(true);
   };
 
-  const handleChange = (e) => {
+/* const handleChange = (e) => {
     const { _id, value } = e.target;
     setProyectoSeleccionado((prevState) => ({
       ...prevState,
       [_id]: value,
     }));
-  };
+  }; */
 
-  const editar = () => {
+
+
+  const editar = async () => {
+    await editProject(proyecto);
     var proyectoNuevo = proyecto;
     proyectoNuevo.map((proyecto) => {
       if (proyecto.id === proyectoSeleccionado.id) {
@@ -60,6 +64,45 @@ const DataProyectos = () => {
     setProyecto(proyectoNuevo);
     setModalEditar(false);
   };
+
+
+  const formik = useFormik({
+    initialValues: initialValues(),
+    onSubmit: async ( values ) => {
+      const {
+        titulo,
+        objEspecifico,
+        presupuesto,
+        nombreLider,
+        identificacionLider,
+        estado,
+        fase,
+        fechaInicial,
+        fechaFinal,
+      } = values;
+      try {
+        const { data } = await editProject({
+          variables: {
+            input: {
+              titulo,
+              objEspecifico,
+              presupuesto,
+              nombreLider,
+              identificacionLider,
+              estado,
+              fase,
+              fechaInicial,
+              fechaFinal,
+            },
+          },
+        });
+        console.log(data);
+      } catch (error) {
+        console.log(error.message);
+      }
+    },
+  });
+
 
   return (
     <div className="Projects">
@@ -115,6 +158,149 @@ const DataProyectos = () => {
       <Modal isOpen={modalEditar}>
         <ModalHeader>
           <div>
+            <h3>Editar ESTADO-FASE Proyecto</h3>
+          </div>
+        </ModalHeader>
+        <ModalBody>
+          <form onSubmit={formik.handleSubmit}>
+            <div className="form-group">
+              <label>Titulo</label>
+              <input
+                className="form-control"
+                type="text"
+                name="titulo"
+                value={formik.values.titulo}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+              />
+              <br />
+
+              <label>Objetivo Especificos</label>
+              <input
+                className="form-control"
+                type="text"
+                name="objEspecifico"
+                value={formik.values.objEspecifico}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+              />
+              <br />
+
+              <label>Presupuesto</label>
+              <input
+                className="form-control"
+                type="number"
+                name="presupuesto"
+                value={formik.values.presupuesto}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+              />
+              <br />
+
+              <label>Nombre Lider</label>
+              <input
+                className="form-control"
+                type="text"
+                name="nombreLider"
+                value={formik.values.nombreLider}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+              />
+              <br />
+
+              <label>Identificacion del Lider</label>
+              <input
+                className="form-control"
+                type="text"
+                name="identificacionLider"
+                value={formik.values.identificacionLider}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+              />
+              <br />
+
+              <label>Estado</label>
+              <select
+                name="estado"
+                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                value={formik.values.estado}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+              >
+                <option value="" label="Estado del proyecto" />
+                <option value="ACTIVO" label="Activo" />
+                <option value="INACTIVO" label="Inactivo" />
+              </select>
+              <br />
+
+              <label>Fase</label>
+              <select
+                name="fase"
+                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                value={formik.values.fase}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+              >
+                <option value="" label="Fase del proyecto" />
+                <option value="NULL" label="Null" />
+                <option value="INICIADO" label="Iniciado" />
+                <option value="ENDESARROLLO" label="En desarrollo" />
+                <option value="TERMINADO" label="Inactivo" />
+              </select>
+              <br />
+
+              <label>Fecha Inicial</label>
+              <input
+                className="form-control"
+                type="date"
+                name="fechaInicial"
+                value={formik.values.fechaInicial}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+              />
+              <br />
+
+              <label>Fecha Final</label>
+              <input
+                className="form-control"
+                type="date"
+                name="fechaFinal"
+                value={formik.values.fechaFinal}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+              />
+              <br />
+            </div>
+            <ModalFooter>
+              <button
+                onClick={() => {
+                  setModalEditar({
+                    variables: { proyecto: proyecto.id },
+                  });
+                  window.location.href = "/listarproyectosadministrador";
+                }}
+                className="btn btn-primary"
+              >
+                {" "}
+                Editar
+              </button>
+              <button
+                className="btn btn-danger"
+                onClick={() => setModalEditar(false)}
+              >
+                Cancelar
+              </button>
+            </ModalFooter>
+          </form>
+        </ModalBody>
+      </Modal>
+
+
+
+
+{/*      <Modal isOpen={modalEditar}>
+        <ModalHeader>
+          <div>
             <h3>Cambiar ESTADO-FASE Proyecto</h3>
           </div>
         </ModalHeader>
@@ -123,20 +309,19 @@ const DataProyectos = () => {
             <label>Titulo</label>
             <input
               className="form-control"
-              readOnly
               type="text"
               name="titulo"
-              value={proyectoSeleccionado && proyectoSeleccionado.titulo}
+              placeholder={proyectoSeleccionado && proyectoSeleccionado.titulo}
+              onChange={handleChange}
             />
             <br />
 
             <label>Objetivo Especifico</label>
             <input
               className="form-control"
-              readOnly
               type="text"
               name="objEspecifico"
-              value={proyectoSeleccionado && proyectoSeleccionado.objEspecifico}
+              placeholder={proyectoSeleccionado && proyectoSeleccionado.objEspecifico}
               onChange={handleChange}
             />
             <br />
@@ -204,10 +389,27 @@ const DataProyectos = () => {
             Cancelar
           </button>
         </ModalFooter>
-      </Modal>
+      </Modal> */}
+
+
       </div>
   );
 };
 
 
 export default DataProyectos;
+
+function initialValues() {
+  return {
+    titulo: "",
+    objEspecifico: "",
+    presupuesto: "",
+    nombreLider: "",
+    identificacionLider: "",
+    estado: "",
+    fase: "",
+    fechaInicial: "",
+    fechaFinal: "",
+  };
+}
+

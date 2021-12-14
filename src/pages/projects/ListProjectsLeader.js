@@ -41,7 +41,7 @@ const DataProyectos = () => {
     fase: "",
     fechaInicial: "",
     fechaFinal: "",
-  });
+  });        
 
   const seleccionarProyecto = (elemento, caso) => {
     setProyectoSeleccionado(elemento);
@@ -427,7 +427,7 @@ const DataProyectos = () => {
                   setModalInsertar({
                     variables: { proyecto: proyecto.id },
                   });
-                  window.location.href = "/projects";
+                  window.location.href = "/listarproyectoslider";
                 }}
                 className="btn btn-primary"
               >
