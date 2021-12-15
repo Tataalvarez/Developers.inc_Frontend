@@ -4,11 +4,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // Componentes
 import Home from "../pages/Home";
 import User from "../pages/auth/User";
-import NewProject from "../pages/projects/NewProject";
+import ListProjectsAdmin from "../pages/projects/ListProjectsAdmin";
 import Error404 from "../pages/Error404";
 import Layout from "../components/Layout";
-import DataProyectos from "../pages/projects/DataProyectos";
-import ListProject from "../pages/projects/ListProject";
+import ListProjectsStudents from "../pages/projects/ListProjectsStudents";
+import ListProjectsLeader from "../pages/projects/ListProjectsLeader";
 
 export default function Navigation() {
   return (
@@ -17,9 +17,9 @@ export default function Navigation() {
         <Routes>
           <Route exact path="/home" element={<Home />} />
           <Route path="/user" element={<User />} />
-          <Route path="/projects" element={<DataProyectos />} />
-          <Route path="/newproject" element={<NewProject />} />
-          <Route path="/listarproyectos" element={<ListProject />} />
+          <Route path="/listarproyectoslider" element={<ListProjectsLeader />} />
+          <Route path="/listarproyectosadministrador" element={<ListProjectsAdmin />} />
+          <Route path="/listarproyectosestudiantes" element={<ListProjectsStudents />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </Layout>
