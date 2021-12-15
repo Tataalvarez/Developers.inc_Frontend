@@ -13,15 +13,7 @@ import { DELETE_PROJECT } from "../../graphql/project";
 const DataProyectos = () => {
   const { data, error } = useQuery(GET_PROJECTS);
 
-  useEffect(() => {
-    console.log("data servidor", data);
-  }, [data]);
-
-  useEffect(() => {
-    if (error) {
-      toast.error("Error consultando los proyectos");
-    }
-  }, [error]);
+  
 
   const [newProject] = useMutation(NEW_PROJECT);
   const [deleteProject] = useMutation(DELETE_PROJECT);
@@ -31,6 +23,7 @@ const DataProyectos = () => {
   const [modalEditar, setModalEditar] = useState(false);
   const [modalEliminar, setModalEliminar] = useState(false);
   const [modalInsertar, setModalInsertar] = useState(false);
+  const [newdata, setNewData] = useState();
   const [proyectoSeleccionado, setProyectoSeleccionado] = useState({
     titulo: "",
     objEspecifico: "",
@@ -78,6 +71,8 @@ const DataProyectos = () => {
     setModalInsertar(true);
   };
 
+  
+
   //  const insertar = () => {
   //    var valorInsertar = proyectoSeleccionado;
   //    valorInsertar.id = proyecto.id;
@@ -122,6 +117,23 @@ const DataProyectos = () => {
       }
     },
   });
+
+  useEffect(() => {
+    console.log("data servidor", data);
+    // setNewData(data.getProjects);
+    setNewData(data);
+    console.log(newdata);
+    if (error) {
+      toast.error("Error consultando los proyectos");
+    }
+  }, [data, error]);
+
+  useEffect(() => {
+    // console.log("data servidor", data);
+    // if (error) {
+    //   toast.error("Error consultando los proyectos");
+    // }
+  }, []);
 
   return (
     <div className="Projects">
