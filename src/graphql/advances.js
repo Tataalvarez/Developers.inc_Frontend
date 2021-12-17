@@ -19,9 +19,8 @@ mutation newAdvance($input: AdvanceInput) {
     id
     fecha
     descripcion
-    observaciones
     proyecto
-    creadoPor
+    
   }
 }
 `;

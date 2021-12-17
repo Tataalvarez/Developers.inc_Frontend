@@ -4,10 +4,15 @@
 // import Layout from "../components/layout/Layout";
 import Home from "../pages/Home";
 import User from "../pages/auth/User";
-import Advances from "../pages/Advances";
 import Error404 from "../pages/Error404";
+import Leader from "../pages/Advances/Leader";
 
 const routes = [
+  {
+    path: "/Leader",
+    element: <Leader/>,
+    exact: true
+  },
   {
     path: "/",
     element: <Home/>,
@@ -18,11 +23,7 @@ const routes = [
     element: <User/>,
     exact: true
   },
-  {
-    path: "/advances",
-    element: <Advances/>,
-    exact: true
-  },
+  
   {
     element: <Error404/>
   },
