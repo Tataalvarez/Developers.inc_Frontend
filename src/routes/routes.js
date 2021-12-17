@@ -7,6 +7,7 @@ import User from "../pages/auth/User";
 import ListProjectsLeader from "../pages/ListProjectsLeader";
 import ListProjectsStudents from "../pages/ListProjectsStudents";
 import ListProjectsAdmin from "../pages/ListProjectsAdmin";
+import Inscriptions from "../pages/inscriptions/Inscriptions"
 import Error404 from "../pages/Error404";
 
 const routes = [
@@ -33,6 +34,11 @@ const routes = [
   {
     path: "/listarproyectosadministrador",
     element: <ListProjectsAdmin/>,
+    exact: true
+  },
+  {
+    path:"/inscripciones",
+    element:<Inscriptions/>,
     exact: true
   },
   {

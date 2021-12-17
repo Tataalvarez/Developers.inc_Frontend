@@ -34,6 +34,11 @@ export default function Sidebar() {
             List Proy Estu
           </NavLink>       
         </li>
+        <li className={location.pathname === "/inscripciones" ? "bg-blue-800 p-2 rounded" : "p-2"}>
+          <NavLink to="/inscripciones" className="text-white">
+            Inscripciones
+          </NavLink>       
+        </li>
         <li className={location.pathname === "/avances" ? "bg-blue-800 p-2 rounded" : "p-2"}>
           <NavLink to="/avances" className="text-white">
             Avances
