@@ -123,21 +123,21 @@ const DataProyectos = () => {
             <label>Titulo</label>
             <input
               className="form-control"
-              readOnly
               type="text"
               name="titulo"
-              value={proyectoSeleccionado && proyectoSeleccionado.titulo}
+              placeholder={proyectoSeleccionado && proyectoSeleccionado.titulo}
+              onChange={handleChange}
             />
             <br />
 
             <label>Objetivo Especifico</label>
             <input
               className="form-control"
-              readOnly
               type="text"
               name="objEspecifico"
-              value={proyectoSeleccionado && proyectoSeleccionado.objEspecifico}
+              placeholder={proyectoSeleccionado && proyectoSeleccionado.objEspecifico}
               onChange={handleChange}
+             
             />
             <br />
 
@@ -146,7 +146,7 @@ const DataProyectos = () => {
               className="form-control"
               type="number"
               name="presupuesto"
-              value={proyectoSeleccionado && proyectoSeleccionado.presupuesto}
+              placeholder={proyectoSeleccionado && proyectoSeleccionado.presupuesto}
               onChange={handleChange}
             />
             <br />
@@ -154,10 +154,9 @@ const DataProyectos = () => {
             <label>Nombre Lider</label>
             <input
               className="form-control"
-              readOnly
               type="text"
               name="nombrelider"
-              value={proyectoSeleccionado && proyectoSeleccionado.nombreLider}
+              placeholder={proyectoSeleccionado && proyectoSeleccionado.nombreLider}
               onChange={handleChange}
             />
             <br />
@@ -167,7 +166,7 @@ const DataProyectos = () => {
               className="form-control"
               type="text"
               name="estado"
-              value={proyectoSeleccionado && proyectoSeleccionado.estado}
+              placeholder={proyectoSeleccionado && proyectoSeleccionado.estado}
               onChange={handleChange}
             />
             <br />
@@ -177,7 +176,7 @@ const DataProyectos = () => {
               className="form-control"
               type="text"
               name="fase"
-              value={proyectoSeleccionado && proyectoSeleccionado.fase}
+              placeholder={proyectoSeleccionado && proyectoSeleccionado.fase}
               onChange={handleChange}
             />
             <br />
@@ -187,7 +186,7 @@ const DataProyectos = () => {
               className="form-control"
               type="date"
               name="fechaInicial"
-              value={proyectoSeleccionado && proyectoSeleccionado.fechaInicial}
+              placeholder={proyectoSeleccionado && proyectoSeleccionado.fechaInicial}
               onChange={handleChange}
             />
             <br />
