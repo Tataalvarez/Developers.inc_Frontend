@@ -9,6 +9,7 @@ import AuthContext from "./context/AuthContext";
 import Auth from "./pages/Auth";
 import Navigation from "./routes/Navigation";
 
+
 export default function App() {
   const [auth, setAuth] = useState(undefined);
 
