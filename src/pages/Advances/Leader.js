@@ -18,6 +18,7 @@ export default function Leader() {
         <div className="Avances">
             <h2 className="text-center text-3xl font-poppins text-blackTem">
                 Avances
+                
             </h2>
             <br />
             <button className="btn btn-success" onClick={() => openModalRegister()}>
