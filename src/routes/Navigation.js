@@ -10,6 +10,7 @@ import ListProjectsAdmin from "../pages/projects/ListProjectsAdmin";
 import ListProjectsStudents from "../pages/projects/ListProjectsStudents";
 import ListProjectsLeader from "../pages/projects/ListProjectsLeader";
 import Inscriptions from "../pages/inscriptions/Inscriptions"
+import Leader from "../pages/Advances/Leader"
 
 export default function Navigation() {
   return (
@@ -22,6 +23,7 @@ export default function Navigation() {
           <Route path="/listarproyectosadministrador" element={<ListProjectsAdmin />} />
           <Route path="/listarproyectosestudiantes" element={<ListProjectsStudents />} />
           <Route path="/inscripciones" element={<Inscriptions />} />
+          <Route path="/avances" element={<Leader />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </Layout>

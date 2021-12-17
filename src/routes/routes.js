@@ -8,6 +8,7 @@ import ListProjectsLeader from "../pages/ListProjectsLeader";
 import ListProjectsStudents from "../pages/ListProjectsStudents";
 import ListProjectsAdmin from "../pages/ListProjectsAdmin";
 import Inscriptions from "../pages/inscriptions/Inscriptions"
+import Leader from "../pages/Advances/Leader"
 import Error404 from "../pages/Error404";
 
 const routes = [
@@ -39,6 +40,12 @@ const routes = [
   {
     path:"/inscripciones",
     element:<Inscriptions/>,
+    exact: true
+  },
+
+  {
+    path:"/avances",
+    element:<Leader/>,
     exact: true
   },
   {

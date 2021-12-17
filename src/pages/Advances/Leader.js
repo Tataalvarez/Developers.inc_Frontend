@@ -30,7 +30,7 @@ export default function Leader() {
 
                     <button type="button" class="btn-close ml-auto" aria-label="Close" onClick={() => {
 
-                        window.location.href = "/advances";
+                        window.location.href = "/avances";
                     }} ></button>
 
                     <ModalHeader>
