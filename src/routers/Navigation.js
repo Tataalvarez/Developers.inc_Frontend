@@ -14,7 +14,7 @@ export default function Navigation() {
         <Routes>
           <Route exact path="/home" element={<Home />} />
           <Route path="*" element={<Error404 />} />
-          <Route path="/leader" element={<Leader />} />
+          <Route path="/advances" element={<Leader />} />
         </Routes>
       </Layout>
     </Router>

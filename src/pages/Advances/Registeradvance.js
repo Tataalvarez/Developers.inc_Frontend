@@ -6,7 +6,7 @@ import { NEW_ADVANCE } from "../../graphql/advances";
 
 
 export default function Registeradvance(props) {
-    const { setShowRegister } = props;
+    
     const [message, setMessage] = useState(null);
     const [newAdvance] = useMutation(NEW_ADVANCE);
   

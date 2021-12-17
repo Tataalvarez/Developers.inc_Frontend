@@ -9,7 +9,7 @@ import Leader from "../pages/Advances/Leader";
 
 const routes = [
   {
-    path: "/Leader",
+    path: "/advances",
     element: <Leader/>,
     exact: true
   },

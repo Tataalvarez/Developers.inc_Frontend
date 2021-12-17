@@ -20,7 +20,7 @@ export default function Sidebar() {
           </NavLink>
         </li>
         <li className={location.pathname === "/avances" ? "bg-blue-800 p-2 rounded" : "p-2"}>
-          <NavLink to="/leader" className="text-white">
+          <NavLink to="/advances" className="text-white">
             Avances
           </NavLink>
         </li>
