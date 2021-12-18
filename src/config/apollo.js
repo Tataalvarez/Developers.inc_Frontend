@@ -3,7 +3,7 @@ const PORT = process.env.PORT || 3000;
 // import fetch from 'node-fetch';
 
 const httpLink = createHttpLink({
-  uri: "https://git.heroku.com/vast-cliffs-02417.git"
+  uri: "http://localhost:4000/"
 });
 
 const client = new ApolloClient({
